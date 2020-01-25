@@ -1,0 +1,116 @@
+/* Descendant of .nav, Bootstrap specificity (shouldn't be like this) */
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+ 
+
+}
+
+
+.nav > .dropdown-megamenu {
+  position: static;
+}
+@media (max-width: 767px) {
+  .navbar-nav .open .dropdown-container {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+
+  }
+}
+.dropdown-megamenu > .dropdown-container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+
+}
+.dropdown-megamenu .dropdown-menu {
+  display: block;
+}
+.link-image .media-object {
+  float: left;
+  margin-bottom: 7.5px;
+}
+.link-image-sm + .link-image-sm .media-object {
+  margin-left: 7.5px;
+}
+.thumbnail .caption {
+  min-height: 120px;
+}
+.thumbnail:hover {
+  text-decoration: none;
+}
+/* Link list */
+.list-links {
+  list-style: none;
+  padding: 0;
+}
+.list-links li {
+  line-height: 1.71428571;
+}
+.list-links a {
+  color: #555;
+}
+.list-links a:hover,
+.list-links a:focus,
+.list-links a:active {
+  color: #22527b;
+}
+/* General styles to improve presentation */
+html,
+body {
+  height: 100%;
+  min-height: 500px;
+}
+body {
+  background: linear-gradient(to bottom, #59a874 0, #449a63 100%);
+}
+.example-megamenu {
+  width: 100%;
+  
+  padding: 0px;
+  
+  text-align: left;
+  /*position: fixed;*/
+}
+
+
+
+@media(min-width: 768px){
+.menumobile  {
+    padding-left: 12%;
+      max-width: 70%;
+      margin: 0 auto;
+      left: 12%;
+  }
+}
+@media(min-width: 50px) and (max-width: 768px){
+.menumobile  {
+    padding-left: 0%;
+    left: 0%;
+  }
+}
+
+@media(min-width: 768px){
+
+.logostyle {
+width: 90px;
+height: 47px;}
+}
+
+@media(min-width: 50px) and (max-width: 768px){
+.logostyle {
+width: 60px;
+height: 31px;}
+}
+
+

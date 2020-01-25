@@ -1,0 +1,132 @@
+{% extends "layout1.html" %}
+
+{% block content %}
+
+<main >
+<div style="padding:10%">
+	<h2> Add a new blog </h2>
+
+	<form method = 'POST' action='/add_blog'>
+		{{ form.hidden_tag() }}
+		<div >
+			{{ form.main_topic.label }}
+
+			{% if form.main_topic.errors %}
+			{% for error in form.main_topic.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+
+			{{ form.main_topic }}
+		</div>
+		<br>
+		<div  >
+			{{ form.topic_expl.label }}
+
+			{% if form.topic_expl.errors %}
+			{% for error in form.topic_expl.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+
+
+			 {{ form.topic_expl(id='editor1') }} 
+		</div>
+		<br>
+				<div >
+			{{ form.blog_topic.label }}
+
+			{% if form.blog_topic.errors %}
+			{% for error in form.blog_topic.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+
+			{{ form.blog_topic }}
+		</div>
+		<br>
+				<div  >
+			{{ form.body.label }}
+
+			{% if form.body.errors %}
+			{% for error in form.body.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+
+
+			 {{ form.body(id='editor2') }} 
+		</div>
+<br>
+		<div  >
+			{{ form.highlight.label }}
+
+			{% if form.highlight.errors %}
+			{% for error in form.highlight.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+
+
+			 {{ form.highlight(id='editor3') }} 
+		</div>
+<br>
+		<div  >
+			{{ form.body2.label }}
+
+			{% if form.body2.errors %}
+			{% for error in form.body2.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+
+
+			 {{ form.body2(id='editor4') }} 
+		</div>
+		<br>
+				<div  >
+			{{ form.author_name.label }}
+
+			{% if form.author_name.errors %}
+			{% for error in form.author_name.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+
+
+			 {{ form.author_name }} 
+		</div>
+		<br>
+				<div  >
+			{{ form.author_expl.label }}
+
+			{% if form.author_expl.errors %}
+			{% for error in form.author_expl.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+
+
+			 {{ form.author_expl(id='editor5') }} 
+		</div>
+		<br>
+						<div  >
+			{{ form.key_words.label }}
+
+			{% if form.key_words.errors %}
+			{% for error in form.key_words.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+
+
+			 {{ form.key_words }} 
+		</div>
+		<br>
+      {{ form.submit(class='btn-primary')}}
+	</form>
+</div>
+</main>
+
+
+{% endblock %}

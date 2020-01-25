@@ -1,0 +1,1 @@
+TNZ=window.TNZ||{},TNZ.EditionSwitcher=function(o){var i={$editionCrtlMobile:(o=o||jQuery)("#js-trk-edition-crtl-mobile")};i.$editionCrtlMobile.off("change"),i.$editionCrtlMobile.on("change",function(i){window.location.href=o(this).val()})},TNZ.JSLib.requireLoadEvent(["jqready"],function(){TNZ.EditionSwitcher(jQuery)});

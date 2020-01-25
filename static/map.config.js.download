@@ -1,0 +1,1 @@
+TNZ=window.TNZ||{},TNZ.MapCoreConfig=function(){var e={},n={defaultCentre:{lat:-40.97989806962013,lng:172.44140625}};return e.getData=function(){return n},e.getDefaultCentre=function(){return n.defaultCentre},e.isMobileDevice=function(){return TNZ.Device.isMobile()},e.isDesktopDevice=function(){return!TNZ.Device.isLessThanDesktop()},e}();

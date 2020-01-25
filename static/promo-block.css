@@ -1,0 +1,3 @@
+.promoblock{color:#fff;display:block}.promoblock:hover,.promoblock:active,.promoblock:focus{color:#fff;text-decoration:none}.promoblock__title{font-size:32px;font-size:3.2rem;color:inherit;font-weight:400;margin-bottom:20px;margin-top:0}@media (max-width: 639px){.promoblock__title{font-size:22px;font-size:2.2rem;line-height:1.2}}.promoblock__button{margin-bottom:0;margin-right:0}.promoblock:hover .promoblock__button:not([disabled]),.promoblock:active .promoblock__button:not([disabled]),.promoblock:focus .promoblock__button:not([disabled]){background-color:#169bcc;border-color:#169bcc}
+
+/*# sourceMappingURL=maps/promo-block.css.map */

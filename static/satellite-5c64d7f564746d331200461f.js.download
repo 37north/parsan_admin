@@ -1,0 +1,186 @@
+/*==================== DIGITAL ARTS NETWORK QUICK FIX CODE FOR SS ISSUES. THESE SHOULD BE REMOVED AT SOME POINT */
+
+//CUSTOM CODE TO FIX SOME ISSUES
+TNZ = window.TNZ || {};
+
+TNZ.Tools = TNZ.Tools || {};
+TNZ.Tools.isIE = TNZ.Tools.isIE || function(){
+  var ua = window.navigator.userAgent;
+  var msie = ua.indexOf('MSIE ');
+  if (msie > 0) {
+    // IE 10 or older => return version number
+    return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+  }
+
+  var trident = ua.indexOf('Trident/');
+  if (trident > 0) {
+    // IE 11 => return version number
+    var rv = ua.indexOf('rv:');
+    return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+  }
+
+  var edge = ua.indexOf('Edge/');
+  if (edge > 0) {
+    // Edge (IE 12+) => return version number
+    return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+  }
+
+  // other browser
+  return false;
+}
+
+
+TNZ.Patch = function() {
+    // private functions & variables
+    // -----------------------------
+    var _self = this;
+    var _data = {};
+    var pub = {};
+
+    /**
+     * edgeBrowserStylesheetFix
+     * Fix for IE random rending issues for stylesheet not getting set to rel type of stylesheet.
+     */
+    pub.EdgeBrowserStylesheetFix = function() {
+        //fix for IE random rending issues for stylesheet not getting set
+        if (TNZ.Tools.isIE()) {
+            var edgebrowser_aSheets = document.querySelectorAll(
+                'link[rel="preload"]'
+            ); //Find any style sheets with preload still applied
+            var edgebrowser_UpdateNeeded = edgebrowser_aSheets.length > 0;
+            for (var i = 0, l = edgebrowser_aSheets.length; i < l; i++) {
+                edgebrowser_aSheets[i].setAttribute("rel", "stylesheet");
+            }
+            if (edgebrowser_UpdateNeeded) {
+                try {
+                    TNZ.Util.console.log(" ==== FIXED CSS FOR IE ===== ");
+                } catch (error) {
+                    //catch error do nothing
+                }
+            }
+        }
+    };
+
+
+    /**
+     * IE11SlowCSSHack
+     * Horrible race condtion for styles hack (image nav)
+     */
+    pub.IE11SlowCSSHack = function() {
+        var pub = {};
+
+        var _imageNavElements = [];
+        var _mapElements = [];
+
+        var _bImageNavOnPage = _imageNavElements.length > 0;
+        var _bMapOnPage = _mapElements.length > 0;
+        var _oMapInstance = false; // oMapInstance.resizeMapTrigger();
+        var _bHaveMap = false;
+        var _mapCounter = 0;
+        var _resizeCounter = 0;
+
+        pub.run = function() {
+            _log("IE11SlowCSSHack: Looking for susceptible modules ");
+
+            // just do this.
+            _resizeTrigger();
+
+            _mapElements = document.querySelectorAll(".locations-map__wrapper"); // update this;
+            _bMapOnPage = _mapElements.length > 0;
+
+            if (!_bMapOnPage) {
+                _log("IE11SlowCSSHack: No Map on found on this page.");
+            } else {
+                _log(
+                    "IE11SlowCSSHack: Found Map on page, wating for styles to load."
+                );
+
+                TNZ.EventManager.bind("TNZ.SpotlightMap.Module", function(
+                    data
+                ) {
+                    _oMapInstance = data.instance;
+                    window.IEHackMapInstance = _oMapInstance;
+                    _log(
+                        "IE11SlowCSSHack: Captured Map Instance",
+                        _oMapInstance
+                    );
+                    _bHaveMap = true;
+                });
+                _checkMap();
+            }
+        };
+
+        var _resizeTrigger = function() {
+          	if( TNZ.URL.get('debug') == 'image-nav' ) return;
+          
+            _resizeCounter++;
+            if (_resizeCounter > 5) return; // max tries.
+
+            _log("IE11SlowCSSHack: Triggering Resize: " + _resizeCounter);
+            window.setTimeout(_resizeTrigger, 2500);
+            TNZ.Tools.triggerResizeEnd();
+        };
+
+        var _checkMap = function() {
+            if (!_testMapStylesApplied()) {
+                // the styles have not loaded yet - try again soon.
+                _log(
+                    "IE11SlowCSSHack: Map Styles not loaded yet - will try again shortly."
+                );
+                if (_mapCounter > 40) return; // max tries.
+                window.setTimeout(_checkMap, 2000);
+                _mapCounter++;
+            } else {
+                if (_bHaveMap) {
+                    _log(
+                        "IE11SlowCSSHack: Map Styles loaded successfully - triggering Map Check"
+                    );
+
+                    // add some hieght
+                    document.querySelector(
+                        ".locations-map__holder"
+                    ).style.height = "100%";
+                    _oMapInstance.resizeMapTrigger();
+                } else {
+                    _log(
+                        "IE11SlowCSSHack: No access to map instance to retrigger - trying resize anyway"
+                    );
+
+                    try {
+                        document.querySelector(
+                            ".locations-map__holder"
+                        ).style.height = "100%";
+                    } catch (error) {}
+                }
+            }
+        };
+
+        var _testMapStylesApplied = function() {
+            return getComputedStyle(_mapElements[0]).position == "relative";
+        };
+
+        var _log = function() {
+            TNZ.Util.console.log(arguments);
+        };
+
+        try {
+            TNZ.JSLib.requireLoadEvent(["docready"], function() {
+                _log("Doc Ready: Initialising the IE11SlowCSSHack system.");
+                pub.run();
+            });
+        } catch (error) {
+            //catch error do nothing
+        }
+
+        return pub;
+    };
+    return pub;
+}();
+
+
+//Run the patch functions
+TNZ.Patch.EdgeBrowserStylesheetFix();
+if(!!TNZ.IE11SlowCSSHack === false) TNZ.Patch.IE11SlowCSSHack(); //only run if TNZ.IE11SlowCSSHack does not exist
+//Must run this for all Chrome too, so run for all browsers if there are slow connections.
+
+

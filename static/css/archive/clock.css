@@ -1,0 +1,114 @@
+.hour12,
+.hour1,
+.hour2,
+.hour3,
+.hour4,
+.hour5 {
+    height: 8px;
+    width: 630px;
+    background: transparent;
+    border-left: 50px solid #000;
+    border-right: 50px solid #000;
+    transform: scale(5);
+/*     transform-origin: right bottom; */
+    top: 110px;
+    left: -200px;
+    position: absolute;
+}
+
+#canvas  {
+    height: 800px;
+    width: 800px;
+    /*left: 50%;*/
+    margin: 0px;
+    position: absolute;
+    top: -590px;
+    left: -210px;
+    right: 20%;
+    
+    background: #333;}
+
+
+
+section {
+    width: 250px;
+    height: 250px;
+    top:-344px;
+    left:60px;
+    /*transform: rotate(scale: 0.1 );*/
+    margin: 0px;
+/*    background: #fff url('http://travisdarnell.com/wp-content/uploads/2013/12/white-linen-paper-texture1.jpg') center center;*/
+    border: 10px solid #000;
+    border-radius: 250px;
+    /*margin-top: 10px;*/
+    box-shadow: 
+        inset 40px 40px 90px rgba(0,0,0,.2),
+        inset 10px 10px 30px rgba(0,0,0,.5), 
+        20px 20px 30px rgba(0,0,0,.4),
+        40px 40px 60px rgba(0,0,0,.4);
+    position: relative;
+    z-index: 1;
+}
+
+
+
+/*the white border after numbers */
+section:before {
+    content: '';
+    width: 230px; 
+    height: 230px;
+    top:310px;
+
+    border-radius:125px;
+    display: block;
+    background: transparent;
+    border: 10px solid white;
+}
+
+/* highlight at top left of black outline */
+section:after {
+    content: '';
+    width: 262px;
+    height: 262px;
+    border-radius: 125px;
+    display: block;
+    background: transparent;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    box-shadow: -3px -3px 9px rgba(255,255,255,.8)}
+
+
+.label {
+    position: absolute;
+    top: 156px;
+    left: 66px;
+    font-size: 18px;
+    color: black;
+}
+
+.clock_center {
+    content: '';
+    background: #000;
+    width: 18px;
+    height: 18px;
+    border-radius: 13px;
+    z-index: 3;
+    position: absolute;
+    top: 106px;
+    left: 106px;
+}
+
+.hour3 { transform: rotate(90deg) translate(0px, 0px) scale(0.32); }
+.hour12 { transform: translate(0px, 0px) scale(0.32); }
+.hour1 { transform: rotate(120deg) translate(0px,0px) scale(0.32); }
+
+.hour2 { transform: rotate(150deg) translate(0px,0px) scale(0.32); }
+
+.hour4 { transform: rotate(210deg) translate(0px,0px) scale(0.32); }
+
+.hour5 { transform: rotate(240deg) translate(0px,0px) scale(0.32); }
+
+/*.section { transform: translate(-1000px,-1000px) scale(0.1); }*/
+
+

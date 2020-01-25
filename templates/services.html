@@ -1,0 +1,200 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+<style type="text/css">
+  body{
+  background-color: white
+}
+.styling {
+  background: #f5f5f5;
+  border: 1px solid red;
+  border-radius: 0px;
+  padding: 20px;
+  text-align: center;
+  /* height: 150px;
+  overflow: auto; */
+}
+@media (max-width: 1200px){
+  #tabheight{
+    padding-bottom:600px;
+  }
+}
+@media (max-width: 991px){
+  #tabheight{
+    padding-bottom:700px;
+  }
+}
+@media (max-width: 680px){
+  #tabheight{
+    padding-bottom: 900px;
+  }
+}
+@media (max-width: 400px){
+  #tabheight{
+    padding-bottom:1200px;
+  }
+@media (max-width: 300px){
+  #tabheight{
+    padding-bottom:2000px;
+  }
+}
+</style>
+<link rel="stylesheet" href="static/css/tab.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">         
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/css/bootstrap-datetimepicker.min.css">   
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">  
+
+          
+
+
+
+	  <section class="hero-wrap" style="background-image: url('static/images/Abbasi.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-start">
+          <div class="col-md-9 ftco-animate pb-4">
+            <h1 class="mb-3 bread" style="color: white">Isfahan Abbasi Hotel</h1>
+            <p><a href="#" class="btn btn-primary py-2 px-4">Book this hotel</a> </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br>
+
+
+  <section >
+
+  <br>
+  <div class="container"   >
+    
+
+    <div class="tab-example" id="tabheight">
+      <ul class="tabs">
+        <li class="tab-link current" data-tab="visa"><b>VISA</b></li>
+        <li class="tab-link" data-tab="hotel"><b>HOTEL RESERVATION</b></li>
+        <li class="tab-link" data-tab="guide"><b>GUIDE</b></li>
+        <li class="tab-link" data-tab="trasportation"><b>TRANSPORTATION</b></li>
+        <li class="tab-link" data-tab="travel"><b>TRAVEL INSURANCE</b></li>
+      </ul>
+      <div class="tab-contents">
+        <div class="tab-pane current" id="visa">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vulputate quis lacus vel sollicitudin. In in mauris ac diam facilisis volutpat. Nullam vitae vehicula eros. Mauris nulla lacus, ornare id quam a, blandit imperdiet leo. Sed rutrum sem at dolor blandit tempus. Nullam fermentum orci rhoncus elementum finibus. Etiam semper facilisis euismod. Nunc ac purus malesuada turpis ullamcorper ultricies. Proin nisl dolor, imperdiet sed maximus id, consectetur et est. Suspendisse hendrerit lacus sit amet urna faucibus finibus. Nullam placerat lacus ut ante porttitor viverra.
+        </div>
+        <div class="tab-pane" id="hotel">
+          Vestibulum vel iaculis mi, sed laoreet neque. Nullam lectus mauris, rhoncus sed porttitor ac, faucibus eu orci. Donec malesuada elit pulvinar ex tempus dictum. Praesent pharetra convallis justo sit amet blandit. Sed lacinia leo ac arcu commodo maximus.
+        </div>
+        <div class="tab-pane" id="guide">
+          Etiam facilisis eleifend ante sed congue. Aliquam erat volutpat. Pellentesque auctor, arcu quis dapibus eleifend, nulla ex elementum nisl, vel tempor orci urna in metus. Nunc lectus velit, convallis vestibulum erat non, aliquet vehicula lectus. Donec et pulvinar ligula, a ultricies libero. Nulla vitae libero nunc. Etiam sed pellentesque enim, ut pulvinar lectus. Nam vel dui ac mauris finibus porttitor at eget enim.
+        </div>
+        <div class="tab-pane" id="trasportation" >
+         <div class=" col-lg-7 "  >
+          Etiam facilisis eleifend ante sed congue. Aliquam erat volutpat. Pellentesque auctor, arcu quis dapibus eleifend, nulla ex elementum nisl, vel tempor orci urna in metus. Nunc lectus velit, convallis vestibulum erat non, aliquet vehicula lectus. Donec et pulvinar ligula, a ultricies libero. Nulla vitae libero nunc. Etiam sed pellentesque enim, ut pulvinar lectus. Nam vel dui ac mauris finibus porttitor at eget enim.Etiam facilisis eleifend ante sed congue. Aliquam erat volutpat. Pellentesque auctor, arcu quis dapibus eleifend, nulla ex elementum nisl, vel tempor orci urna in metus. Nunc lectus velit, convallis vestibulum erat non, aliquet vehicula lectus. Donec et pulvinar ligula, a ultricies libero. Nulla vitae libero nunc. Etiam sed pellentesque enim, ut pulvinar lectus. Nam vel dui ac mauris finibus porttitor at eget enim.Etiam facilisis eleifend ante sed congue. Aliquam erat volutpat. Pellentesque auctor, arcu quis dapibus eleifend, nulla ex elementum nisl, vel tempor orci urna in metus. Nunc lectus velit, convallis vestibulum erat non, aliquet vehicula lectus. Donec et pulvinar ligula, a ultricies libero. Nulla vitae libero nunc. Etiam sed pellentesque enim, ut pulvinar lectus. Nam vel dui ac mauris finibus porttitor at eget enim.Etiam facilisis eleifend ante sed congue. Aliquam erat volutpat. Pellentesque auctor, arcu quis dapibus eleifend, nulla ex elementum nisl, vel tempor orci urna in metus. Nunc lectus velit, convallis vestibulum erat non, aliquet vehicula lectus. Donec et pulvinar ligula, a ultricies libero. Nulla vitae libero nunc. Etiam sed pellentesque enim, ut pulvinar lectus. Nam vel dui ac mauris finibus porttitor at eget enim.</div>
+          <div class=" col-lg-5 " >
+            <img style="width: 100%; height: 100%; padding: 20px 0 20px 0" src="static/images/Abbasi.jpg"> </img>
+
+            
+            <div>
+            <div class="search-wrap-1 ftco-animate"  >
+              <h2 class="mb-3">Let's Help You Find a Hotel</h2>
+              <form action="#" class="search-property-1">
+                <div class="row">
+
+<br>
+                  <div class="col-lg-12 align-items-end mb-3">
+                    <div class="form-group">
+                      <label for="#">Email Address</label>
+                      <div class="form-field">
+                        <div class="icon"><span class="ion-ios-search"></span></div>
+                        <input class="form-control" placeholder="Your Email Address" type="email" required>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 align-items-end mb-3">
+
+
+
+                  <div class="col-lg-12 align-self-end">
+                    <div class="form-group">
+                      <div class="form-field">
+                        <input type="submit" value="Send Your Enquiry" class="form-control btn btn-primary">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div> 
+            
+          </div>
+        </div>
+
+
+
+        <div class="tab-pane" id="travel">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vulputate, ipsum vel pharetra ullamcorper, est magna suscipit purus, gravida eleifend sapien magna sit amet enim. Integer sagittis eros sed ligula dignissim interdum. Suspendisse maximus nibh in auctor vulputate.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+  </section>
+  <!-- <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script> -->
+  
+<script  src="static/js/date1.js"></script> 
+     <script  src="static/js/tab.js"></script> 
+  <!-- <script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>  -->
+    <script  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script> 
+      <script  src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.min.js"></script> 
+        <script  src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.1.3/js/bootstrap-datetimepicker.min.js"></script>
+
+
+          
+
+
+          
+<!-- partial:index.partial.html -->
+<section>
+<div class="container3">
+  <div class="box3">
+    <img src="static/images/gallery-2.jpg">
+    <span>ONE</span>
+  </div>
+  <div class="box3">
+    <img src="static/images/gallery-1.jpg">
+    <span class="visible-lg visible-md visible-sm">HOLLIDAY</span>
+  </div>
+  <div class="box3">
+    <img src="static/images/gallery-4.jpg">
+    <span>A</span>
+  </div>
+  <div class="box3">
+    <img src="static/images/image_1.jpg">
+    <span>MILLION</span>
+  </div>
+    <div class="box3">
+    <img src="static/images/gallery-6.jpg">
+    <span>SMILES</span>
+  </div>
+
+</div>
+
+          
+</section>
+
+        
+
+
+
+
+
+
+  <!-- loader -->
+<!--   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div> -->
+
+
+{% endblock %}

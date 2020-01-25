@@ -1,0 +1,3 @@
+@-webkit-keyframes rotate{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate{100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@-webkit-keyframes fadePulse{0%{opacity:1}50%{opacity:0.5}100%{opacity:1}}@keyframes fadePulse{0%{opacity:1}50%{opacity:0.5}100%{opacity:1}}
+
+/*# sourceMappingURL=maps/animations.css.map */
