@@ -24,10 +24,15 @@
   	{% for b in blog %}
   	<tr>
 	  	<th> {{b.id}} </th>
-	  	<th> {{b.title}} </th>
+	  	<th> {{b.main_topic}} </th>
 	  	<th> {{b.create_date}}  </th>
-	  	<th><a href="edit_blog/{{b.id}}" class="btn btn-default pull-left" target="_blank">Edit</a> </th>
-	  	<th><a href="#" class="btn btn-danger"> Delete</a></th>
+	  	<th><a href="edit_blog{{b.id}}" class="btn btn-default pull-left" target="_blank">Edit</a> </th>
+	  	<th> 
+	  		<form action='{{url_for("delete_blog", id=b.id)}}' method = 'post'>
+	  			<input type="hidden" name="_method" value="DELETE">
+	  			<input type="submit" value="Delete" class="btn btn-danger">
+	  		</form>
+	  	</th>
 	{%endfor%}
   	</tr>
   </table>

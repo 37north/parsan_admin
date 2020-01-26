@@ -18,7 +18,7 @@ def index():
 	return render_template('index1.html')
 	
 	
-@app.route('/admin1')
+@app.route('/admin')
 def admin():
 	if 'username' not in session:
 
@@ -27,7 +27,7 @@ def admin():
 		
 	app.config['SQLALCHEMY_DATABASE_URI']
 	with db.engine.connect() as con:
-		rs = con.execute('select * from articles where id>13')
+		rs = con.execute('select * from articles')
 		blog=rs.fetchall()
 
 	return render_template('admin.html', blog=blog)
@@ -93,10 +93,66 @@ def addBlog():
 		db.session.commit()
 		#~ flash('hhhhhhh', 'success')
 		#~ session['username'] = form.username.data
-		return redirect('admin1')
+		return redirect(url_for('admin'))
 	return render_template('add_blog.html', form = form)
 		
+@app.route('/edit_blog<string:id>', methods=['GET','POST'])
+def editBlog(id):
+	form = blogForm(request.form)
+	app.config['SQLALCHEMY_DATABASE_URI']
+	with db.engine.connect() as con:
+		rs = con.execute('select * from articles where id=%s' , [id])
+		blogid=rs.fetchone()
+	
+	#populate blog form fields
+	form.main_topic.data = blogid['main_topic']
+	form.topic_expl.data =  blogid['topic_expl']
+	form.blog_topic.data=  blogid['blog_topic']
+	form.body.data=  blogid['body']
+	form.body2.data=  blogid['body2']
+	form.highlight.data=  blogid['highlight']
+	form.author_name.data=  blogid['author_name']
+	form.author_expl.data=  blogid['author_expl']
+	form.key_words.data=  blogid['key_words']
+	
+	if request.method =='POST' and form.validate():
 
+		#~ title = form.title.data
+		#~ body = form.body.data
+		#~ author = session['username']
+
+		main_topic= request.form['main_topic']
+		topic_expl = request.form['topic_expl']
+		blog_topic = request.form['blog_topic']
+		body = request.form['body']
+		body2 = request.form['body2']
+		highlight = request.form['highlight']
+		author_name = request.form['author_name']
+		author_expl = request.form['author_expl']
+		key_words = request.form['key_words']
+		
+
+		#~ app.config['SQLALCHEMY_DATABASE_URI']
+		#~ newBlog = Blog(main_topic, topic_expl, blog_topic, body, body2, highlight, author_name, author_expl, key_words)
+		#~ db.session.add(newBlog)
+		#~ db.session.commit()
+		
+		with db.engine.connect() as con:
+			con.execute('update articles set main_topic=%s, topic_expl=%s, blog_topic=%s, body=%s, body2=%s, highlight=%s, author_name=%s, author_expl=%s, key_words=%s where id=%s' , [main_topic, topic_expl, blog_topic, body, body2, highlight, 
+author_name, author_expl, key_words, id])
+			con.close()
+		return redirect(url_for('admin'))
+
+	return render_template('edit_blog.html', form = form)
+
+
+@app.route('/delete_blog<string:id>', methods=['POST'])
+def delete_blog(id):
+	with db.engine.connect() as con:
+		con.execute('delete from articles where id=%s' , [id])
+	return redirect(url_for('admin'))
+			
+	
 
 
 @app.route("/")

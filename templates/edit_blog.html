@@ -4,7 +4,7 @@
 
 <main >
 <div style="padding:10%">
-	<h2> Add a new blog </h2>
+	<h2> Edit Blog </h2>
 
 	<form method = 'POST' action=''>
 		{{ form.hidden_tag() }}
@@ -123,7 +123,7 @@
 			 {{ form.key_words }} 
 		</div>
 		<br>
-      {{ form.submit(class='btn-primary')}}
+      {{ form.update(class='btn-primary')}}
 	</form>
 </div>
 </main>
