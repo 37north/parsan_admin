@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from forms import adminForm, blogForm
 from werkzeug import generate_password_hash, check_password_hash
 from data import Articles
-
+import os
 Articles = Articles()
 
 app = Flask(__name__, static_url_path='/static')
@@ -151,7 +151,20 @@ def delete_blog(id):
 	with db.engine.connect() as con:
 		con.execute('delete from articles where id=%s' , [id])
 	return redirect(url_for('admin'))
+
+app.config["IMAGE_UPLOADS"]= "/media/dina-tech/D0CAAF7ACAAF5C0A/IT/parsan/parsan_v26/static/img/upload"
 			
+@app.route('/upload', methods = ['GET', 'POST'])
+def upload():
+	if request.method == "POST":
+		print('dllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll')
+		if request.files:
+			image = request.files["image"]
+			image.save(os.path.join(app.config["IMAGE_UPLOADS"], '1.jpg'))
+			print(image)
+			
+			return redirect(request.url)
+	return render_template('upload.html')
 	
 
 

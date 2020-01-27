@@ -1,0 +1,25 @@
+{% extends "layout1.html" %}
+
+{% block content %}
+
+<main >
+<div style="padding:10%">
+	<h2> Add or edit images</h2>
+
+	<br><br>
+<form action="/upload" method="POST" enctype="multipart/form-data" >
+<div class='form-group'>
+	<label>Select Image </label>
+	<div class='custom-file'>
+	<input type="file" class="custom-file-input" name="image" id="image" >
+	<label class="custom-file-label" for="image" > Select Image . . . </label> 
+</div>
+<button type="submit" class="btn btn-primary"> upload image </button>
+</form>
+
+
+</div>
+</main>
+
+
+{% endblock %}
