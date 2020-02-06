@@ -13,7 +13,7 @@
 
 
 
-	  <section class="hero-wrap" style="background-image: url('static/images/Abbasi.jpg');" data-stellar-background-ratio="0.5">
+	  <section class="hero-wrap" style="height:85vh;background-image:url(static/photo/31_Tours_Banner.jpg); " data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-start">
@@ -34,17 +34,10 @@
               <div class="row justify-content-start pb-3">
                 <div class="col-md-12 heading-section ftco-animate p-5 p-lg-0">
                   <span class="subheading">Get in touch with us</span>
-                  <h2 class="mb-4" style="width:85%">Paragraph</h2>
-                  <p style="width:85%; color: white">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                  <p style="width:85%; color: white">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                  <p style="width:85%; color: white">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                  <p style="width:85%; color: white">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                  <p style="width:85%; color: white">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                  <p style="width:85%; color: white">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                  <p style="width:85%; color: white">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-                  <p style="width:85%; color: white">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                  <p style="width:85%; color: white">A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-
+                  <div style="width:85%; color: white">
+                  <h2 class="mb-4">{{ tour.paragraph_title | safe }}</h2>
+                  <p >{{tour.paragraph | safe}}</p>
+                </div>
                 </div>
               </div>
             </div>
@@ -103,9 +96,10 @@
             <p class="mb-4-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
         </div>
+
   <div class="tanzim">
    <figure class="snip1477">
-  <img src="static/images/meshkin.jpg" alt="sample38" />
+  <img src="{{ url_for('static', filename='photo/32_Tours1.jpg')}}" alt="" />
   <div class="title">
     <div>
       <h2 style="text-align: left">Eco Tours</h2>
@@ -121,7 +115,7 @@
   <a class="visible-lg visible-md" href="#"></a>
   
 </figure>
-<figure class="snip1477"><img src="static/images/meshkin.jpg" alt="sample91" />
+<figure class="snip1477"><img src="{{ url_for('static', filename='photo/33_Tours2.jpg')}}" alt="" />
   <div class="title">
     <div>
       <h2 style="text-align: left">Cultural</h2>
@@ -137,7 +131,7 @@
   <a class="visible-lg visible-md" href="#"></a>
   
 </figure>
-<figure class="snip1477"><img src="static/images/meshkin.jpg" alt="sample91" />
+<figure class="snip1477"><img src="{{ url_for('static', filename='photo/34_Tours3.jpg')}}" alt="" />
   <div class="title">
     <div>
       <h2 style="text-align: left">MICE</h2>
@@ -153,7 +147,7 @@
   <a class="visible-lg visible-md" href="#"></a>
   
 </figure>
-<figure class="snip1477"><img src="static/images/meshkin.jpg" alt="sample91" />
+<figure class="snip1477"><img src="{{ url_for('static', filename='photo/35_Tours4.jpg')}}" alt="" />
   <div class="title">
     <div>
       <h2>Religious</h2>
@@ -169,7 +163,7 @@
   <a class="visible-lg visible-md" href="#"></a>
   
 </figure>
-<figure class="snip1477"><img src="static/images/meshkin.jpg" alt="sample91" />
+<figure class="snip1477"><img src="{{ url_for('static', filename='photo/36_Tours5.jpg')}}" alt="" />
   <div class="title">
     <div>
       <h2>Folklore</h2>
@@ -185,7 +179,7 @@
   <a class="visible-lg visible-md" href="#"></a>
   
 </figure>
-<figure class="snip1477"><img  src="static/images/meshkin.jpg" alt="sample35" />
+<figure class="snip1477"><img  src="{{ url_for('static', filename='photo/37_Tours6.jpg')}}" alt="" />
   <div class="title">
     <div>
       <h2>Wellness</h2>
@@ -212,12 +206,12 @@
             <h2 class="mb-4">What Client Says</h2>
           </div>
         </div>
-        <div class="row ftco-animate justify-content-center">
+       <div class="row ftco-animate justify-content-center">
           <div class="col-md-12">
             <div class="carousel-testimony owl-carousel ftco-owl">
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(static/images/person_1.jpg)">
+                  <div class="user-img" style="background-image: url({{ url_for('static', filename='photo/14_Person1.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -231,7 +225,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(static/images/person_2.jpg)">
+                  <div class="user-img" style="background-image: url({{ url_for('static', filename='photo/15_Person2.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -245,7 +239,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(static/images/person_3.jpg)">
+                  <div class="user-img" style="background-image: url({{ url_for('static', filename='photo/15_Person3.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -259,7 +253,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(static/images/person_1.jpg)">
+                  <div class="user-img" style="background-image: url({{ url_for('static', filename='photo/17_Person4.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -273,7 +267,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(static/images/person_3.jpg)">
+                  <div class="user-img" style="background-image: url({{ url_for('static', filename='photo/18_Person5.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -285,6 +279,8 @@
                   </div>
                 </div>
               </div>
+
+
             </div>
           </div>
         </div>

@@ -12,3 +12,7 @@ def Articles():
 	}
 	]
 	return articles
+	
+	
+#~ for i in [{'i1':'image1'}, {'i2':'image2'}]:
+	#~ print(i.items())

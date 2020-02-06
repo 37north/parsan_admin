@@ -1,0 +1,39 @@
+{% extends "layout1.html" %}
+
+{% block content %}
+
+<main >
+<div style="padding:10%">
+	<h2> Edit Tours </h2>
+
+	<form method = 'POST' action=''>
+		{{ form.hidden_tag() }}
+
+		<div  >
+			<b>{{ form.paragraph_title.label }}</b>
+			{% if form.paragraph_title.errors %}
+			{% for error in form.paragraph_title.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+			 {{ form.paragraph_title }} 
+		</div>
+<br>
+		<div  >
+			<b>{{ form.paragraph.label }}<b>
+			{% if form.paragraph.errors %}
+			{% for error in form.paragraph.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+			 {{ form.paragraph(id='editor12') }} 
+		</div>
+<br>
+
+      {{ form.update(class='btn-primary')}}
+	</form>
+</div>
+</main>
+
+
+{% endblock %}

@@ -11,7 +11,7 @@
 
 	  <section id="home-section" class="hero" >
 
-  	
+	
 
 
 <div class="container visible-xs visible-sm">
@@ -31,15 +31,15 @@
 
     <div class="carousel-inner" >
       <div class="item active">
-        <img src="static/img/bg_22.jpg" alt="Los Angeles" style="width:100%;">
+        <img src="{{ url_for('static', filename='photo/88_Slider1.jpg')}}" alt="" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="static/img/bg_12.jpg" alt="Chicago" style="width:100%;">
+        <img src="{{ url_for('static', filename='photo/89_Slider2.jpg')}}" alt="" style="width:100%;">
       </div>
     
       <div class="item">
-        <img src="static/img/bg_2.jpg" alt="New york" style="width:100%;">
+        <img src="{{ url_for('static', filename='photo/90_Slider3.jpg')}}" alt="" style="width:100%;">
       </div>
     </div>
 
@@ -88,16 +88,16 @@
 	        <div class="container p-0">
 	          <div class="row d-flex no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
 	          	<div class="one-third order-md-last">
-	          		<div class="img" style="background-image:url(static/img/bg_1.jpg); ">
+	          		<div class="img" style="background-image:url(static/photo/88_Slider1.jpg); ">
 	          			<div class="overlay"></div>
 	          		</div>
-	          		<div class="vr"><span class="pl-3 py-4" style="background-image: url(static/img/bg_1-1.jpg); font-size: 60px;">Isfahan</span></div>
+	          		<div class="vr"><span class="pl-3 py-4" style="font-size:60px;background-image: url('{{ url_for('static', filename='photo/88_Slider1.jpg')}}">{{home.slide1_place |safe}}</span></div>
 	          	</div>
 		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
-		          		<span class="subheading pl-5"><sup>&nbsp &nbsp Discover Isfahan</sup></span>
-			            <h1 class="mb-4 mt-3">Naqsh-e Jahan Square</span></h1>
-			            <p id="mobile_hidden" style="text-align: justify; width: 90%">{{articles[0]['body']}}</p>
+		          		<span class="subheading pl-5"><sup>&nbsp &nbsp {{home.slide1_discover |safe}}</sup></span>
+			            <h1 class="mb-4 mt-3">{{home.slide1_title |safe}}</span></h1>
+			            <p id="mobile_hidden" style="text-align: justify; width: 90%">{{home.slide1_text |safe}}</p>
 			            
 			            <p><a href="#" class="btn btn-primary px-5 py-3 mt-3">Discover <span class="ion-ios-arrow-forward"></span></a></p>
 		            </div>
@@ -112,16 +112,16 @@
 	        <div class="container p-0">
 	          <div class="row d-flex no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
 	          	<div class="one-third order-md-last">
-	          		<div class="img" style="background-image:url(static/img/bg_2.jpg)">
-	          			<div class="overlay"></div>
-	          		</div>
-	          		<div class="vr"><span class="pl-3 py-4" style="background-image: url(static/img/bg_2-2.jpg); font-size: 60px; background-color: red">Tabriz</span></div>
-	          	</div>
+                <div class="img" style="background-image:url(static/photo/89_Slider2.jpg); ">
+                  <div class="overlay"></div>
+                </div>
+                <div class="vr"><span class="pl-3 py-4" style="font-size:60px;background-image: url('{{ url_for('static', filename='photo/89_Slider2.jpg')}}">{{home.slide2_place |safe}}</span></div>
+              </div>
 		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
-		          		<span class="subheading pl-5"><sup> &nbsp &nbsp Discover Tabriz</sup></span>
-			            <h1 class="mb-44 mt-3">Grand Bazaar of Tabriz</span></h1>
-			            <p id="mobile_hidden" style="text-align: justify; width: 90%">The Bazaar of Tabriz is a historical market situated in the city center of Tabriz, Iran. It is one of the oldest bazaars in the Middle East and the largest covered bazaar in the world. It is one of Iran's UNESCO World Heritage Sites</p>
+		          		<span class="subheading pl-5"><sup> &nbsp &nbsp {{home.slide2_discover |safe}}</sup></span>
+			            <h1 class="mb-44 mt-3">{{home.slide2_title |safe}}</span></h1>
+			            <p id="mobile_hidden" style="text-align: justify; width: 90%">{{home.slide2_text |safe}}</p>
 			            
 			            <p><a href="#" class="btn btn-primary px-5 py-3 mt-3">Discover <span class="ion-ios-arrow-forward"></span></a></p>
 		            </div>
@@ -136,16 +136,16 @@
 	        <div class="container p-0">
 	          <div class="row d-flex no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
 	          	<div class="one-third order-md-last">
-	          		<div  class="img" style="background-image:url(static/img/bg_22.jpg);">
-	          			<div class="overlay"></div>
-	          		</div>
-	          		<div class="vr"><span class="pl-3 py-4" style="background-image: url(static/img/bg_2-2.jpg); font-size: 60px; ">Shiraz</span></div>
-	          	</div>
+                <div class="img" style="background-image:url(static/photo/90_Slider3.jpg); ">
+                  <div class="overlay"></div>
+                </div>
+                <div class="vr"><span class="pl-3 py-4" style="font-size:60px;background-image: url('{{ url_for('static', filename='photo/90_Slider3.jpg')}}">{{home.slide3_place |safe}}</span></div>
+              </div>
 		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
-		          		<span class="subheading pl-5"><sup> &nbsp &nbsp Discover Shiraz</sup></span>
-			            <h1 class="mb-44 mt-3">Persopolis</span></h1>
-			            <p id="mobile_hidden" style="text-align: justify; width: 90%">Persepolis was the ceremonial capital of the Achaemenid Empire. It is situated 60 km northeast of the city of Shiraz in Fars Province, Iran. The earliest remains of Persepolis date back to 515 BCE. It exemplifies the Achaemenid style of architecture. UNESCO declared the ruins of Persepolis a World Heritage Site in 1979.</p>
+		          		<span class="subheading pl-5"><sup> &nbsp &nbsp {{home.slide3_discover |safe}}</sup></span>
+			            <h1 class="mb-44 mt-3">{{home.slide3_title |safe}}</span></h1>
+			            <p id="mobile_hidden" style="text-align: justify; width: 90%">{{home.slide3_text |safe}}</p>
 			            
 			            <p><a href="#" class="btn btn-primary px-5 py-3 mt-3">Discover <span class="ion-ios-arrow-forward"></span></a></p>
 		            </div>
@@ -162,16 +162,16 @@
 
 
 
-<!-- style="background-image: url('static/images/bg_5.jpg' -->
 
 
-		<section class="ftco-section ftco-services-2" id="tours-section" ); color:white">
+
+		<section class="ftco-section ftco-services-2" id="tours-section" ); color:white>
 			<div class="container">
 				<div class="row justify-content-center pb-5">
           <div class="col-md-12 heading-section text-center ftco-animate">
-          	<span class="subheading mb-4-center">Feel the Taste of Hospitality . . .</span>
-            <h2 class="mb-4-center">Plan your trip</h2>
-            <p class="mb-4-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          	<span class="subheading mb-4-center">{{home.plan_motto |safe}}</span>
+            <h2 class="mb-4-center">{{home.plan_title |safe}}</h2>
+            <p class="mb-4-center">{{home.plan_expl |safe}}</p>
           </div>
         </div>
        <a id="myLink"></a>
@@ -370,89 +370,90 @@ var foopicker = new FooPicker({
 			<div class="container " >
 				<div class="row justify-content-center pb-5">
           <div class="col-md-12 heading-section text-center ftco-animate">
-          	<span class="subheading mb-4-center">Feel the Taste of Hospitality . . .</span>
-            <h2 class="mb-4-center">Best Place To Travel</h2>
-            <p class="mb-4-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          	<span class="subheading mb-4-center">{{home.travel_motto |safe}}</span>
+            <h2 class="mb-4-center">{{home.travel_title |safe}}</h2>
+            <p class="mb-4-center">{{home.travel_expl |safe}}</p>
           </div>
         </div>
 	<div class="tanzim">
 	 <figure class="snip1477">
-  <img src="static/images/destination-20.jpg" alt="sample38" />
+  <img src="{{ url_for('static', filename='photo/8_Travel1.jpg')}}" alt="" />
   <div class="title">
     <div>
-      <h2 style="text-align: left">Shiraz</h2>
-      <h4>Karim Khan Citadel </h4>
+      <h2 style="text-align: left">{{home.travel_city1 |safe}}</h2>
+      <h4>{{home.travel_place1 |safe}} </h4>
     </div>
   </div>
   <figcaption>
-    <p>The Arg of Karim Khan or Karim Khan Citadel is a citadel located in downtown Shiraz, Iran. </p>
+    <p> {{home.travel_expl1 |safe}} </p>
   </figcaption>
   <a class="visible-lg visible-md" href="#"></a>
   
 </figure>
-<figure class="snip1477"><img src="static/images/destination-6.jpg" alt="sample91" />
+<figure class="snip1477"><img src="{{ url_for('static', filename='photo/9_Travel2.jpg')}}" alt="sample91" />
   <div class="title">
     <div>
-      <h2 style="text-align: left">Tehran</h2>
-      <h4>Milad Tower</h4>
+      <h2 style="text-align: left">{{home.travel_city2 |safe}}</h2>
+      <h4>{{home.travel_place2 |safe}}</h4>
     </div>
   </div>
   <figcaption>
-    <p>Milad Tower, also known as the Tehran Tower, is a multi-purpose tower in Tehran, Iran. It is the sixth-tallest tower in the world.</p>
+    <p>{{home.travel_expl2 |safe}}</p>
   </figcaption>
   <a class="visible-lg visible-md" href="#"></a>
   
 </figure>
-<figure class="snip1477"><img src="static/images/destination-5.jpg" alt="sample91" />
+<figure class="snip1477"><img src="{{ url_for('static', filename='photo/9_Travel2.jpg')}}" alt="sample91" />
   <div class="title">
     <div>
-      <h2 style="text-align: left">Kermanshah</h2>
-      <h4>Seymareh River</h4>
+      <h2 style="text-align: left">{{home.travel_city3 |safe}}</h2>
+      <h4>{{home.travel_place3 |safe}}</h4>
     </div>
   </div>
   <figcaption>
-    <p>Seymareh is a river in southwestern Iran in an area around southwest Kermanshah.</p>
+    <p>{{home.travel_expl3 |safe}}</p>
   </figcaption>
   <a class="visible-lg visible-md" href="#"></a>
   
 </figure>
-<figure class="snip1477"><img src="static/images/destination-3.jpg" alt="sample91" />
+<figure class="snip1477"><img src="{{ url_for('static', filename='photo/9_Travel2.jpg')}}" alt="sample91" />
   <div class="title">
     <div>
-      <h2>Isfahan</h2>
-      <h4>Si-o-se-pol</h4>
+      <h2 style="text-align: left">{{home.travel_city4 |safe}}</h2>
+      <h4>{{home.travel_place4 |safe}}</h4>
     </div>
   </div>
   <figcaption>
-    <p>It is a popular recreational gathering place, and is one of the most famous examples of Iran's Safavid architecture.</p>
+    <p>{{home.travel_expl4 |safe}}</p>
   </figcaption>
   <a class="visible-lg visible-md" href="#"></a>
   
 </figure>
-<figure class="snip1477"><img src="static/images/destination-2.jpg" alt="sample91" />
+<figure class="snip1477"><img src="{{ url_for('static', filename='photo/9_Travel2.jpg')}}" alt="sample91" />
   <div class="title">
     <div>
-      <h2>Kerman</h2>
-      <h4>Lut Desert</h4>
+      <h2 style="text-align: left">{{home.travel_city5 |safe}}</h2>
+      <h4>{{home.travel_place5 |safe}}</h4>
     </div>
   </div>
   <figcaption>
-    <p>The Lut Desert, widely referred to as Dasht-e Lut, is a large salt desert located in the provinces of Kerman and Sistan and Baluchestan, Iran.</p>
+    <p>{{home.travel_expl5 |safe}}</p>
   </figcaption>
   <a class="visible-lg visible-md" href="#"></a>
   
 </figure>
-<figure class="snip1477"><img  src="static/images/destination-1.jpg" alt="sample35" />
+<figure class="snip1477"><img src="{{ url_for('static', filename='photo/9_Travel2.jpg')}}" alt="sample91" />
   <div class="title">
     <div>
-      <h2>Persepolis</h2>
-      <h4>Fars</h4>
+      <h2 style="text-align: left">{{home.travel_city6 |safe}}</h2>
+      <h4>{{home.travel_place6 |safe}}</h4>
     </div>
   </div>
   <figcaption>
-    <p>Persepolis was the ceremonial capital of the Achaemenid Empire (ca. 550–330 BC). </p>
+    <p>{{home.travel_expl6 |safe}}</p>
   </figcaption>
   <a class="visible-lg visible-md" href="#"></a>
+  
 </figure>
 </div>
 
@@ -468,9 +469,9 @@ var foopicker = new FooPicker({
 			<div class="container">
 				<div class="row justify-content-center pb-5">
           <div class="col-md-12 heading-section text-center ftco-animate">
-          	<span class="subheading mb-4-center">Feel the Taste of Hospitality . . .</span>
-            <h2 class="mb-4-center">Our Services</h2>
-            <p class="mb-4-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          	<span class="subheading mb-4-center">{{home.service_motto |safe}}</span>
+            <h2 class="mb-4-center">{{home.service_title |safe}}</h2>
+            <p class="mb-4-center">{{home.service_expl |safe}}</p>
           </div>
         </div>
         <div class="row mb-4-center">
@@ -478,8 +479,8 @@ var foopicker = new FooPicker({
             <div class="media block-6 services text-center d-block">
               <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-gliding"></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Hotel Reservation</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                <h3 class="heading mb-3">{{home.service_title1 |safe}}</h3>
+                <p>{{home.service_expl1 |safe}} </p>
               </div>
             </div>      
           </div>
@@ -487,8 +488,8 @@ var foopicker = new FooPicker({
             <div class="media block-6 services text-center d-block" >
               <div class="icon justify-content-center align-items-center d-flex"><span class="fa fa-plane" ></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Travel Arrangement</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h3 class="heading mb-3">{{home.service_title2 |safe}}</h3>
+                <p>{{home.service_expl2 |safe}} </p>
               </div>
             </div>      
           </div>
@@ -496,8 +497,8 @@ var foopicker = new FooPicker({
             <div class="media block-6 services text-center d-block">
               <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-tour-guide"></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Qualified Tour Leaders</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h3 class="heading mb-3">{{home.service_title3 |safe}}</h3>
+                <p>{{home.service_expl3 |safe}}</p>
               </div>
             </div>      
           </div>
@@ -505,8 +506,8 @@ var foopicker = new FooPicker({
             <div class="media block-6 services text-center d-block">
               <div class="icon justify-content-center align-items-center d-flex"><span class="fa fa-bed"></span></div>
               <div class="media-body">
-                <h3 class="heading mb-3">Hotel Reservation</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h3 class="heading mb-3">{{home.service_title4 |safe}}</h3>
+                <p>{{home.service_expl4 |safe}}</p>
               </div>
             </div>      
           </div>
@@ -520,8 +521,8 @@ var foopicker = new FooPicker({
       <div class="container">
         <div class="row justify-content-center pb-3">
           <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-            <span class="subheading">Read testimonials</span>
-            <h2 class="mb-4">What happens in our tours?</h2>
+            <span class="subheading">{{home.testimonia1_motto |safe}}</span>
+            <h2 class="mb-4">{{home.testimonia1_title |safe}}</h2>
           </div>
         </div>
         <div class="row ftco-animate justify-content-center">
@@ -529,74 +530,75 @@ var foopicker = new FooPicker({
             <div class="carousel-testimony owl-carousel ftco-owl">
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(static/images/person_1.jpg)">
+                  <div class="user-img" style="background-image: url({{ url_for('static', filename='photo/14_Person1.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text px-4 pb-5">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Jeff Freshman</p>
-                    <span class="position">Artist</span>
+                    <p class="mb-4"> {{home.testimonia1_expl1 |safe}} </p>
+                    <p class="name">{{home.testimonia1_name1 |safe}}</p>
+                    <span class="position">{{home.testimonia1_position1 |safe}}</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(static/images/person_2.jpg)">
+                  <div class="user-img" style="background-image: url({{ url_for('static', filename='photo/15_Person2.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text px-4 pb-5">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Jeff Freshman</p>
-                    <span class="position">Artist</span>
+                    <p class="mb-4"> {{home.testimonia1_expl2 |safe}} </p>
+                    <p class="name">{{home.testimonia1_name2 |safe}}</p>
+                    <span class="position">{{home.testimonia1_position2 |safe}}</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(static/images/person_3.jpg)">
+                  <div class="user-img" style="background-image: url({{ url_for('static', filename='photo/15_Person3.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text px-4 pb-5">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Jeff Freshman</p>
-                    <span class="position">Artist</span>
+                    <p class="mb-4"> {{home.testimonia1_expl3 |safe}} </p>
+                    <p class="name">{{home.testimonia1_name3 |safe}}</p>
+                    <span class="position">{{home.testimonia1_position3 |safe}}</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(static/images/person_1.jpg)">
+                  <div class="user-img" style="background-image: url({{ url_for('static', filename='photo/17_Person4.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text px-4 pb-5">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Jeff Freshman</p>
-                    <span class="position">Artist</span>
+                    <p class="mb-4"> {{home.testimonia1_expl4 |safe}} </p>
+                    <p class="name">{{home.testimonia1_name4 |safe}}</p>
+                    <span class="position">{{home.testimonia1_position4 |safe}}</span>
                   </div>
                 </div>
               </div>
               <div class="item">
                 <div class="testimony-wrap text-center py-4 pb-5">
-                  <div class="user-img" style="background-image: url(static/images/person_3.jpg)">
+                  <div class="user-img" style="background-image: url({{ url_for('static', filename='photo/18_Person5.jpg')}})">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
                   </div>
                   <div class="text px-4 pb-5">
-                    <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-                    <p class="name">Jeff Freshman</p>
-                    <span class="position">Artist</span>
+                    <p class="mb-4"> {{home.testimonia1_expl5 |safe}} </p>
+                    <p class="name">{{home.testimonia1_name5 |safe}}</p>
+                    <span class="position">{{home.testimonia1_position5 |safe}}</span>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -625,7 +627,7 @@ var foopicker = new FooPicker({
     		
 <div class="tanzim">
 <figure class="snip1477" >
-  <img src="static/img/tour8.png" alt="sample38"  />
+  <img src="{{ url_for('static', filename='photo/19_Route1.jpg')}}" alt="sample38"  />
   <div class="title">
     <div>
       <h2 style="text-align: left">8 Nights</h2>
@@ -639,7 +641,7 @@ var foopicker = new FooPicker({
   
 </figure>
 <figure class="snip1477">
-  <img src="static/img/tour11.png" alt="sample38"  />
+  <img src="{{ url_for('static', filename='photo/20_Route2.jpg')}}" alt=""  />
   <div class="title">
     <div>
       <h2 style="text-align: left">11 Nights</h2>
@@ -654,7 +656,7 @@ var foopicker = new FooPicker({
 </figure>
 
 <figure class="snip1477" >
-  <img src="static/img/tour8.png" alt="sample38"  />
+  <img src="{{ url_for('static', filename='photo/21_Route3.jpg')}}" alt=""  />
   <div class="title">
     <div>
       <h2 style="text-align: left">Many Nights</h2>
@@ -682,15 +684,15 @@ var foopicker = new FooPicker({
       <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
           <div class="col-md-7 heading-section text-center ftco-animate">
-            <span class="subheading">Blog</span>
-            <h2 class="mb-4" ><a href="#" style="text-decoration: none; color: #333">  Our Blog </a></h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            <span class="subheading">{{home.blog_motto |safe}}</span>
+            <h2 class="mb-4" ><a href="#" style="text-decoration: none; color: #333">  {{home.blog_title |safe}} </a></h2>
+            <p>{{home.blog_expl |safe}}</p>
           </div>
         </div>
         <div class="row d-flex">
           <div class="col-md-6 col-lg-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="single.html" class="block-20" style="background-image: url('static/images/image_1.jpg');">
+              <a href="" class="block-20" style="background-image: url('{{ url_for('static', filename='photo/22_Blog1.jpg')}}')">
               </a>
               <div class="text float-right d-block">
               	<div class="d-flex align-items-center pt-2 mb-4 topp">
@@ -716,7 +718,7 @@ var foopicker = new FooPicker({
           </div>
           <div class="col-md-6 col-lg-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="single.html" class="block-20" style="background-image: url('static/images/image_2.jpg');">
+              <a href="" class="block-20" style="background-image: url('{{ url_for('static', filename='photo/23_Blog2.jpg')}}')">
               </a>
               <div class="text float-right d-block">
               	<div class="d-flex align-items-center pt-2 mb-4 topp">
@@ -742,7 +744,7 @@ var foopicker = new FooPicker({
           </div>
           <div class="col-md-6 col-lg-4 d-flex ftco-animate">
           	<div class="blog-entry">
-              <a href="single.html" class="block-20" style="background-image: url('static/images/image_3.jpg');">
+                            <a href="" class="block-20" style="background-image: url('{{ url_for('static', filename='photo/24_Blog3.jpg')}}')">
               </a>
               <div class="text float-right d-block">
               	<div class="d-flex align-items-center pt-2 mb-4 topp">
@@ -785,22 +787,25 @@ var foopicker = new FooPicker({
 <section>
     		<div class="row justify-content-center pb-5 pt-5 ">
           <div class="col-md-12 heading-section text-center ftco-animate">
-          	<span class="subheading">Parsan Story</span>
-            <h2 class="mb-4">Who Are We ?</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+          	<span class="subheading">{{home.about_motto |safe}}</span>
+            <h2 class="mb-4">{{home.about_title |safe}}</h2>
+            <p>{{home.about_expl |safe}}</p>
           </div>
         </div>
+
+
+
     		<div class="row" style="width:100%">
     			<div class="col-md-12 room-wrap">
     				<div class="row">
     					<div class="col-md-7 d-flex ftco-animate">
-    						<div class="img align-self-stretch" style="background-image: url(static/img/aboutus.jpg); margin-left: 5%"></div>
+    						<div class="img align-self-stretch" style="margin-left: 5%;background-image: url('{{ url_for('static', filename='photo/25_About_Us.jpg')}}')"></div>
     					</div>
     					<div class="col-md-5 ftco-animate">
     						<div class="text py-5">
-    							<h3><a href="hotel-single.html" style="margin-left: 5%">About Parsan</a></h3>
+    							<h3><a href="hotel-single.html" style="margin-left: 5%">{{home.about_main_title |safe}}</a></h3>
     							<!-- <p class="pos">from <span class="price">$99.00</span>/night</p> -->
-    							<p style="text-align: justify; margin-left: 5%">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    							<p style="text-align: justify; margin-left: 5%">{{home.about_main |safe}}</p>
     							<p></p>
     						</div>
     					</div>
@@ -819,23 +824,23 @@ var foopicker = new FooPicker({
 <!-- partial:index.partial.html -->
 <div class="container3">
   <div class="box3">
-    <img src="static/images/gallery-2.jpg">
+    <img src="{{ url_for('static', filename='photo/26_ONE.jpg')}}">
     <span class="visible-lg visible-md visible-sm">ONE</span>
   </div>
   <div class="box3">
-    <img src="static/images/gallery-1.jpg">
+    <img src="{{ url_for('static', filename='photo/27_HOLIDAY.jpg')}}">
     <span class="visible-lg visible-md visible-sm">HOLLIDAY</span>
   </div>
   <div class="box3">
-    <img src="static/images/gallery-4.jpg">
+    <img src="{{ url_for('static', filename='photo/28_A.jpg')}}">
     <span class="visible-lg visible-md visible-sm">A</span>
   </div>
   <div class="box3">
-    <img src="static/images/image_1.jpg">
+    <img src="{{ url_for('static', filename='photo/29_MILLION.jpg')}}">
     <span class="visible-lg visible-md visible-sm">MILLION</span>
   </div>
     <div class="box3">
-    <img src="static/images/gallery-6.jpg">
+    <img src="{{ url_for('static', filename='photo/30_SMILL.jpg')}}">
     <span class="visible-lg visible-md visible-sm">SMILES</span>
   </div>
 

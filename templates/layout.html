@@ -142,7 +142,7 @@ font-size: 3.5vw;
               <div class="col-sm-6 col-md-4 " >
                 <div class="media" >
                   <div class="media-left">
-                    <a class="link-image" href="#"><img class="media-object visible-lg visible-md" src="static/images/menu/Tours2.jpg" ></a>
+                    <a class="link-image" href="#"><img class="media-object visible-lg visible-md" src="{{ url_for('static', filename='photo/1_Tour_Culture.jpg')}}"></a>
      
                   </div>
                   <div class="media-body ">
@@ -162,7 +162,7 @@ font-size: 3.5vw;
               <div class="col-sm-6 col-md-4 ">
                 <div class="media">
                   <div class="media-left">
-                    <a class="link-image" href="#"><img class="media-object visible-lg visible-md" src="static/images/menu/Tours1.jpg"></a>
+                    <a class="link-image" href="#"><img class="media-object visible-lg visible-md" src="{{ url_for('static', filename='photo/2_Eco_Tours.jpg')}}"></a>
 
                   </div>
                   <div class="media-body ">
@@ -183,7 +183,7 @@ font-size: 3.5vw;
             <div class="col-sm-6 col-md-4">
                 <div class="media">
                   <div class="media-left">
-                    <a class="link-image" href="#"><img class="media-object visible-lg visible-md" src="static/images/menu/Tours1.jpg"></a>
+                    <a class="link-image" href="#"><img class="media-object visible-lg visible-md" src="{{ url_for('static', filename='photo/3_Wellness_Tours.jpg')}}"></a>
 
                   </div>
                   <div class="media-body">
@@ -225,7 +225,7 @@ font-size: 3.5vw;
               <div class="col-sm-3 visible-lg visible-md">
 
                 <a href="#" class="thumbnail">
-                  <img src="static/images/menu/service1.jpg" alt="">
+                  <img src="{{ url_for('static', filename='photo/4_Services1.jpg')}}" alt="">
                   <div class="caption">
                     <b>Something</b>
                     <p>Explanation</p>
@@ -237,7 +237,7 @@ font-size: 3.5vw;
               <div class="col-sm-3 visible-lg visible-md">
 
                 <a href="#" class="thumbnail ">
-                  <img src="static/images/menu/service2.jpg" alt="">
+                  <img src="{{ url_for('static', filename='photo/5_Services2.jpg')}}" alt="">
                   <div class="caption">
                     <b>Something</b>
                     <p>Explanation</p>
@@ -249,7 +249,7 @@ font-size: 3.5vw;
               <div class="col-sm-3">
 
                 <a href="#" class="thumbnail visible-lg visible-md">
-                  <img src="static/images/menu/service3.jpg" alt="">
+                  <img src="{{ url_for('static', filename='photo/6_Services3.jpg')}}" alt="">
                   <div class="caption">
                     <b>Something</b>
                     <p>Explanation</p>
@@ -360,7 +360,7 @@ font-size: 3.5vw;
               </div><!-- /col -->
 
               <div class="col-sm-12 col-md-6 visible-lg visible-md">
-                <img src="static/images/menu/Blog.jpg">
+                <img src="{{ url_for('static', filename='photo/7_About_Parsan.jpg')}}">
               </div><!-- /col -->
 
             </div><!-- /row -->

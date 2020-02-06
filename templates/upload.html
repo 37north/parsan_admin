@@ -2,24 +2,290 @@
 
 {% block content %}
 
-<main >
-<div style="padding:10%">
-	<h2> Add or edit images</h2>
 
-	<br><br>
-<form action="/upload" method="POST" enctype="multipart/form-data" >
+<ul class="nav nav-tabs" id="myTab" role="tablist" style="padding:3%">
+  <li class="nav-item">
+    <a class="nav-link active" id="Menu" data-toggle="tab" href="#menu" role="tab" aria-controls="home1" aria-selected="true">Menu</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="H_Travel" data-toggle="tab" href="#travel" role="tab" aria-controls="profile" aria-selected="false">Home/Best Places To Travel</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="H_Who" data-toggle="tab" href="#who" role="tab" aria-controls="contact" aria-selected="false">Home/Who We Are</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" id="H_Who" data-toggle="tab" href="#common" role="tab" aria-controls="contact" aria-selected="false">Home/Most Common Routes</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" id="H_Blog" data-toggle="tab" href="#blog" role="tab" aria-controls="profile" aria-selected="false">Home/Our Blog</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="H_About" data-toggle="tab" href="#about" role="tab" aria-controls="contact" aria-selected="false">About Us</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" id="Gallary" data-toggle="tab" href="#gallary" role="tab" aria-controls="profile" aria-selected="false">Gallary</a>
+	</li>
+	    <li class="nav-item">
+    <a class="nav-link" id="Tours Page" data-toggle="tab" href="#sliders" role="tab" aria-controls="profile" aria-selected="false">Sliders</a>
+	</li>
+	<li class="nav-item">
+    <a class="nav-link" id="Tours Page" data-toggle="tab" href="#tourspage" role="tab" aria-controls="profile" aria-selected="false">Tours Page</a>
+	</li>
+	<li class="nav-item">
+    <a class="nav-link" id="Services Page" data-toggle="tab" href="#servicespage" role="tab" aria-controls="profile" aria-selected="false">Tours Page</a>
+	</li>
+	<li class="nav-item">
+    <a class="nav-link" id="Grand Tour Page" data-toggle="tab" href="#grandtourpage" role="tab" aria-controls="profile" aria-selected="false">Grand Tour Page</a>
+	</li>
+	<li class="nav-item">
+    <a class="nav-link" id="Blogs Page" data-toggle="tab" href="#blogspage" role="tab" aria-controls="profile" aria-selected="false">Blogs Page</a>
+	</li>
+</ul>
+
+
+
+
+<div class="tab-content" id="myTabContent">
+
+
+  <div class="tab-pane fade show active" id="menu" role="tabpanel" aria-labelledby="Menu" style="padding-left:3%">
+{% for i in ['Tours/culture and History_image1', 'Tours/Eco Tours_image2', 'Tours/Wellness Tours_image3', 'Services1_image4', 'Services2_image5', 'Services3_image6', 'About Parsan_image7' ] %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block; ;
+" >
 <div class='form-group'>
-	<label>Select Image </label>
+	<label> {{i[:-7]}} </label>
 	<div class='custom-file'>
-	<input type="file" class="custom-file-input" name="image" id="image" >
-	<label class="custom-file-label" for="image" > Select Image . . . </label> 
+		<input type="file" class="custom-file-input" name={{i[-6:]}}  id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
 </div>
-<button type="submit" class="btn btn-primary"> upload image </button>
+
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
 </form>
+{% endfor %}
 
+  </div>
 
+  <div class="tab-pane fade" id="travel" role="tabpanel" aria-labelledby="profile-tab" style="padding-left:3%">
+{% for i in [ 'Shiraz_image8', 'Tehran_image9'] %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block;">
+<div class='form-group'>
+	<label> {{i[:-7]}} </label>
+	<div class='custom-file'>
+		<input type="file" class="custom-file-input" name={{i[-6:]}}  id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
 </div>
-</main>
+
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
+</form>
+{% endfor %}
+
+{% for i in ['Kermanshah_image10', 'Isfahan_image11', 'Kerman_image12', 'Persopolis_image13' ] %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block;">
+<div class='form-group'>
+	<label> {{i[:-8]}} </label>
+	<div class='custom-file'>
+		<input type="file" class="custom-file-input" name={{i[-7:]}}  id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
+</div>
+
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
+</form>
+{% endfor %}
+  </div>
+
+
+
+  <div class="tab-pane fade" id="who" role="tabpanel" aria-labelledby="contact-tab" style="padding-left:3%">
+
+{% for i in [ 'Person1_image14', 'Person2_image15', 'Person3_image16', 'Person4_image17', 'Person5_image18' ] %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block;">
+<div class='form-group'>
+	<label> {{i[:-8]}} </label>
+	<div class='custom-file'>
+		<input type="file" class="custom-file-input" name={{i[-7:]}}  id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
+</div>
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
+</form>
+{% endfor %}
+  </div>
+    <div class="tab-pane fade" id="common" role="tabpanel" aria-labelledby="profile-tab" style="padding-left:3%">
+    	{% for i in [ 'Classic Tour_image19', 'Grand Tour_image20', 'Another Tour_image21' ] %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block;">
+<div class='form-group'>
+	<label> {{i[:-8]}} </label>
+	<div class='custom-file'>
+		<input type="file" class="custom-file-input" name={{i[-7:]}}  id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
+</div>
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
+</form>
+{% endfor %}
+
+    </div>
+  <div class="tab-pane fade" id="blog" role="tabpanel" aria-labelledby="contact-tab" style="padding-left:3%">
+{% for i in [ 'Blog1_image22', 'Blog2_image23', 'Blog3_image24' ] %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block;">
+<div class='form-group'>
+	<label> {{i[:-8]}} </label>
+	<div class='custom-file'>
+		<input type="file" class="custom-file-input" name={{i[-7:]}}  id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
+</div>
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
+</form>
+{% endfor %}
+
+  </div>
+
+    <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="profile-tab" style="padding-left:3%">
+{% for i in [ 'About Us_image25' ] %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block;">
+<div class='form-group'>
+	<label> {{i[:-8]}} </label>
+	<div class='custom-file'>
+		<input type="file" class="custom-file-input" name={{i[-7:]}}  id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
+</div>
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
+</form>
+{% endfor %}
+    </div>
+
+  <div class="tab-pane fade" id="gallary" role="tabpanel" aria-labelledby="contact-tab" style="padding-left:3%">
+
+{% for i in [ 'ONE_image26', 'HOLIDAY_image27', 'A_image28', 'MILLION_image29', 'SMILES_image30' ] %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block;">
+<div class='form-group'>
+	<label> {{i[:-8]}} </label>
+	<div class='custom-file'>
+		<input type="file" class="custom-file-input" name={{i[-7:]}}  id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
+</div>
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
+</form>
+{% endfor %}
+  </div>
+
+    <div class="tab-pane fade" id="sliders" role="tabpanel" aria-labelledby="profile-tab" style="padding-left:3%">
+
+{% for i in [ 'Slider1_image31', 'Slider2_image32', 'Slider3_image33' ] %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block;">
+<div class='form-group'>
+	<label> {{i[:-8]}} </label>
+	<div class='custom-file'>
+		<input type="file" class="custom-file-input" name={{i[-7:]}}  id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
+</div>
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
+</form>
+{% endfor %}
+    </div>
+
+  <div class="tab-pane fade" id="tourspage" role="tabpanel" aria-labelledby="contact-tab" style="padding-left:3%">
+{% for i in [ 'Tours_Banner_image34', 'Tour1_image35', 'Tour2_image36', 'Tour3_image37', 'Tour4_image38' , 'Tour5_image39', 'Tour6_image40'  ] %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block;">
+<div class='form-group'>
+	<label> {{i[:-8]}} </label>
+	<div class='custom-file'>
+		<input type="file" class="custom-file-input" name={{i[-7:]}}  id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
+</div>
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
+</form>
+{% endfor %}
+  </div>
+
+  <div class="tab-pane fade" id="servicespage" role="tabpanel" aria-labelledby="profile-tab" style="padding-left:3%">
+
+{% for i in [ 'Services_Banner_image41', 'Guide_image42', 'Hotel_image43', 'Transportation_image44', 'Insurance_image45' , 'Flight_image46', 'Visa_image47'  ] %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block;">
+<div class='form-group'>
+	<label> {{i[:-8]}} </label>
+	<div class='custom-file'>
+		<input type="file" class="custom-file-input" name={{i[-7:]}}  id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
+</div>
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
+</form>
+{% endfor %}
+  </div>
+
+  <div class="tab-pane fade" id="grandtourpage" role="tabpanel" aria-labelledby="contact-tab" style="padding-left:3%">
+{% for i in [ 'Tour11_Banner_image48'] %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block;">
+<div class='form-group'>
+	<label> {{i[:-8]}} </label>
+	<div class='custom-file'>
+		<input type="file" class="custom-file-input" name={{i[-7:]}}  id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
+</div>
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
+</form>
+{% endfor %}
+  </div>
+
+  <div class="tab-pane fade" id="blogspage" role="tabpanel" aria-labelledby="profile-tab" style="padding-left:3%">
+
+<h4> Main Topic </h4>
+{% for b in blog %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block;">
+<div class='form-group'>
+	<label> {{b.id|string+b.main_topic}} </label>
+	<div class='custom-file'>
+		<input type="file" class="custom-file-input" name={{b.id|string+b.main_topic.split()[0]}}.jpg id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
+</div>
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
+</form>
+{% endfor %}
+<hr>
+<h4> Blog Topic </h4>
+{% for b in blog %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block;">
+<div class='form-group'>
+<label> {{b.id|string+b.blog_topic}} </label>
+	<div class='custom-file'>
+		<input type="file" class="custom-file-input" name={{b.id|string+b.blog_topic.split()[0]}}.jpg id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
+</div>
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
+</form>
+{% endfor %}
+<hr>
+<h4> Author </h4>
+{% for b in blog %}
+<form action="/upload" method="POST" enctype="multipart/form-data" style="display: inline-block;">
+<div class='form-group'>
+<label> {{b.id|string+b.author_name}} </label>
+	<div class='custom-file'>
+		<input type="file" class="custom-file-input" name={{b.id|string+b.author_name.split()[0]}}.jpg id="image" >
+		<label class="custom-file-label" for="image"   style="width:90%"> Select Image . . . </label> 
+	</div>
+</div>
+<button type="submit" class="btn btn-primary" style="margin-bottom: 20px"> upload image </button>
+</form>
+{% endfor %}
+  </div>
+
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+</div>
+
+
 
 
 {% endblock %}

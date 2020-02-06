@@ -1,0 +1,79 @@
+{% extends "layout1.html" %}
+
+{% block content %}
+
+<main >
+<div style="padding:10%">
+	<h2> Edit Services </h2>
+
+	<form method = 'POST' action=''>
+		{{ form.hidden_tag() }}
+
+		<div  >
+			<b>{{ form.guide.label }}</b>
+			{% if form.guide.errors %}
+			{% for error in form.guide.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+			 {{ form.guide(id='editor6') }} 
+		</div>
+<br>
+		<div  >
+			<b>{{ form.hotel.label }}<b>
+			{% if form.hotel.errors %}
+			{% for error in form.hotel.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+			 {{ form.hotel(id='editor7') }} 
+		</div>
+<br>
+				<div  >
+			<b>{{ form.transportation.label }}</b>
+			{% if form.transportation.errors %}
+			{% for error in form.transportation.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+			 {{ form.transportation(id='editor8') }} 
+		</div>
+<br>
+				<div  >
+			<b>{{ form.insurance.label }}</b>
+			{% if form.insurance.errors %}
+			{% for error in form.insurance.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+			 {{ form.insurance(id='editor9') }} 
+		</div>
+<br>
+				<div  >
+			<b>{{ form.flight.label }}</b>
+			{% if form.flight.errors %}
+			{% for error in form.flight.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+			 {{ form.flight(id='editor10') }} 
+		</div>
+<br>
+				<div  >
+			<b>{{ form.visa.label }}</b>
+			{% if form.visa.errors %}
+			{% for error in form.visa.errors %}
+			<p class='error-message'> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+			 {{ form.visa(id='editor11') }} 
+		</div>
+		<br>
+
+      {{ form.update(class='btn-primary')}}
+	</form>
+</div>
+</main>
+
+
+{% endblock %}

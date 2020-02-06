@@ -7,7 +7,14 @@
 
 <link rel="stylesheet" href="static/css/style_blog.css">
 
-  <section class="banner_area" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(static/images/bg_4.jpg) no-repeat scroll center;">
+  <section class="banner_area" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(static/images/{{blog.id|string+blog.main_topic.split()[0]}}.jpg) no-repeat scroll center;">
+
+
+
+
+
+
+
         <div class="banner_inner d-flex align-items-center">
             <div class="overlay"></div>
             <div class="container">

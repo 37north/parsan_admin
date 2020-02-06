@@ -1,0 +1,176 @@
+{% extends "layout1.html" %}
+
+{% block content %}
+
+<main >
+<div style="padding:10%">
+	<h2> Edit Blog </h2>
+
+	<form method = 'POST' action=''>
+		{{ form.hidden_tag() }}
+		<div >
+			{{ form.slide1_place.label }}
+			{% if form.slide1_place.errors %}
+			{% for error in form.slide1_place.errors %}
+			<p class="error-message"> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+			{{ form.slide1_place }}
+		</div>
+		<br>
+
+<div >
+	{{ form.slide1_discover.label }}
+	{% if form.slide1_discover.errors %}
+	{% for error in form.slide1_discover.errors %}
+	<p class="error-message"> {{error}} </p>
+{% endfor %}
+{% endif %}
+{{ form.slide1_discover }}
+</div>
+<br>
+
+
+
+		<div >
+			{{ form.slide1_title.label }}
+			{% if form.slide1_title.errors %}
+			{% for error in form.slide1_title.errors %}
+			<p class="error-message"> {{error}} </p>
+		{% endfor %}
+	{% endif %}
+{{ form.slide1_title }}
+</div><br>
+
+
+
+		<div >
+			{{ form.slide1_text.label }}
+			{% if form.slide1_text.errors %}
+			{% for error in form.slide1_text.errors %}
+			<p class="error-message"> {{error}} </p>
+		{% endfor %}
+	{% endif %}
+{{ form.slide1_text(id='editor14') }}
+</div><br>
+
+
+
+		<div >{{ form.slide2_place.label }}
+			{% if form.slide2_place.errors %}
+			{% for error in form.slide2_place.errors %}
+			<p class="error-message"> {{error}} </p>
+		{% endfor %}
+	{% endif %}
+{{ form.slide2_place }}
+</div><br>
+
+
+
+		<div >
+			{{ form.slide2_discover.label }}
+			{% if form.slide2_discover.errors %}
+			{% for error in form.slide2_discover.errors %}
+			<p class="error-message"> {{error}} </p>
+		{% endfor %}
+		{% endif %}
+		{{ form.slide2_discover }}
+	</div><br>
+
+
+
+		<div >{{ form.slide2_title.label }}
+			{% if form.slide2_title.errors %}
+			{% for error in form.slide2_title.errors %}
+			<p class="error-message"> {{error}} </p>
+			{% endfor %}
+			{% endif %}
+			{{ form.slide2_title }}
+		</div><br>
+
+
+		<div >{{ form.slide2_text.label }}{% if form.slide2_text.errors %}{% for error in form.slide2_text.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.slide2_text(id='editor15') }}</div><br>
+
+
+		<div >{{ form.slide3_place.label }}{% if form.slide3_place.errors %}{% for error in form.slide3_place.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.slide3_place }}</div><br>
+
+
+		<div >{{ form.slide3_discover.label }}{% if form.slide3_discover.errors %}{% for error in form.slide3_discover.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.slide3_discover }}</div><br>
+
+
+		<div >{{ form.slide3_title.label }}{% if form.slide3_title.errors %}{% for error in form.slide3_title.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.slide3_title }}</div><br>
+
+
+		<div >{{ form.slide3_text.label }}{% if form.slide3_text.errors %}{% for error in form.slide3_text.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.slide3_text(id='editor16') }}</div><br>
+
+		
+
+		<div>{{ form.plan_motto.label }}{% if form.plan_motto.errors %}{% for error in form.plan_motto.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.plan_motto }}</div><br>
+		<div >{{ form.plan_title.label }}{% if form.plan_title.errors %}{% for error in form.plan_title.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.plan_title }}</div><br>
+		<div >{{ form.plan_expl.label }}{% if form.plan_expl.errors %}{% for error in form.plan_expl.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.plan_expl(id='editor17') }}</div><br>
+		<div >{{ form.travel_motto.label }}{% if form.travel_motto.errors %}{% for error in form.travel_motto.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_motto }}</div><br>
+		<div >{{ form.travel_title.label }}{% if form.travel_title.errors %}{% for error in form.travel_title.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_title }}</div><br>
+		<div >{{ form.travel_expl.label }}{% if form.travel_expl.errors %}{% for error in form.travel_expl.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_expl(id='editor18') }}</div><br>
+		<div >{{ form.travel_city1.label }}{% if form.travel_city1.errors %}{% for error in form.travel_city1.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_city1 }}</div><br>
+		<div >{{ form.travel_place1.label }}{% if form.travel_place1.errors %}{% for error in form.travel_place1.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_place1 }}</div><br>
+		<div >{{ form.travel_expl1.label }}{% if form.travel_expl1.errors %}{% for error in form.travel_expl1.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_expl1(id='editor19') }}</div><br>
+		<div >{{ form.travel_city2.label }}{% if form.travel_city2.errors %}{% for error in form.travel_city2.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_city2 }}</div><br>
+		<div >{{ form.travel_place2.label }}{% if form.travel_place2.errors %}{% for error in form.travel_place2.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_place2 }}</div><br>
+		<div >{{ form.travel_expl2.label }}{% if form.travel_expl2.errors %}{% for error in form.travel_expl2.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_expl2(id='editor20') }}</div><br>
+		<div >{{ form.travel_city3.label }}{% if form.travel_city3.errors %}{% for error in form.travel_city3.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_city3 }}</div><br>
+		<div >{{ form.travel_place3.label }}{% if form.travel_place3.errors %}{% for error in form.travel_place3.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_place3 }}</div><br>
+		<div >{{ form.travel_expl3.label }}{% if form.travel_expl3.errors %}{% for error in form.travel_expl3.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_expl3(id='editor21') }}</div><br>
+		<div >{{ form.travel_city4.label }}{% if form.travel_city4.errors %}{% for error in form.travel_city4.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_city4 }}</div><br>
+		<div >{{ form.travel_place4.label }}{% if form.travel_place4.errors %}{% for error in form.travel_place4.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_place4 }}</div><br>
+		<div >{{ form.travel_expl4.label }}{% if form.travel_expl4.errors %}{% for error in form.travel_expl4.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_expl4(id='editor22') }}</div><br>
+		<div >{{ form.travel_city5.label }}{% if form.travel_city5.errors %}{% for error in form.travel_city5.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_city5 }}</div><br>
+		<div >{{ form.travel_place5.label }}{% if form.travel_place5.errors %}{% for error in form.travel_place5.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_place5 }}</div><br>
+		<div >{{ form.travel_expl5.label }}{% if form.travel_expl5.errors %}{% for error in form.travel_expl5.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_expl5(id='editor23') }}</div><br>
+		<div >{{ form.travel_city6.label }}{% if form.travel_city6.errors %}{% for error in form.travel_city6.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_city6 }}</div><br>
+		<div >{{ form.travel_place6.label }}{% if form.travel_place6.errors %}{% for error in form.travel_place6.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_place6 }}</div><br>
+		<div >{{ form.travel_expl6.label }}{% if form.travel_expl6.errors %}{% for error in form.travel_expl6.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.travel_expl6(id='editor24') }}</div><br>
+		<div >{{ form.service_motto.label }}{% if form.service_motto.errors %}{% for error in form.service_motto.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.service_motto }}</div><br>
+		<div >{{ form.service_title.label }}{% if form.service_title.errors %}{% for error in form.service_title.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.service_title }}</div><br>
+		<div >{{ form.service_expl.label }}{% if form.service_expl.errors %}{% for error in form.service_expl.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.service_expl(id='editor25') }}</div><br>
+		<div >{{ form.service_title1.label }}{% if form.service_title1.errors %}{% for error in form.service_title1.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.service_title1 }}</div><br>
+		<div >{{ form.service_expl1.label }}{% if form.service_expl1.errors %}{% for error in form.service_expl1.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.service_expl1(id='editor26') }}</div><br>
+		<div >{{ form.service_title2.label }}{% if form.service_title2.errors %}{% for error in form.service_title2.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.service_title2 }}</div><br>
+		<div >{{ form.service_expl2.label }}{% if form.service_expl2.errors %}{% for error in form.service_expl2.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.service_expl2(id='editor27') }}</div><br>
+		<div >{{ form.service_title3.label }}{% if form.service_title3.errors %}{% for error in form.service_title3.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.service_title3 }}</div><br>
+		<div >{{ form.service_expl3.label }}{% if form.service_expl3.errors %}{% for error in form.service_expl3.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.service_expl3(id='editor28') }}</div><br>
+		<div >{{ form.service_title4.label }}{% if form.service_title4.errors %}{% for error in form.service_title4.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.service_title4 }}</div><br>
+		<div >{{ form.service_expl4.label }}{% if form.service_expl4.errors %}{% for error in form.service_expl4.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.service_expl4(id='editor29') }}</div><br>
+		<div >{{ form.testimonia1_motto.label }}{% if form.testimonia1_motto.errors %}{% for error in form.testimonia1_motto.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_motto }}</div><br>
+		<div >{{ form.testimonia1_title.label }}{% if form.testimonia1_title.errors %}{% for error in form.testimonia1_title.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_title }}</div><br>
+		<div >{{ form.testimonia1_expl1.label }}{% if form.testimonia1_expl1.errors %}{% for error in form.testimonia1_expl1.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_expl1(id='editor30') }}</div><br>
+		<div >{{ form.testimonia1_name1.label }}{% if form.testimonia1_name1.errors %}{% for error in form.testimonia1_name1.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_name1 }}</div><br>
+		<div >{{ form.testimonia1_position1.label }}{% if form.testimonia1_position1.errors %}{% for error in form.testimonia1_position1.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_position1 }}</div><br>
+		<div >{{ form.testimonia1_expl2.label }}{% if form.testimonia1_expl2.errors %}{% for error in form.testimonia1_expl2.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_expl2(id='editor31') }}</div><br>
+		<div >{{ form.testimonia1_name2.label }}{% if form.testimonia1_name2.errors %}{% for error in form.testimonia1_name2.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_name2 }}</div><br>
+		<div >{{ form.testimonia1_position2.label }}{% if form.testimonia1_position2.errors %}{% for error in form.testimonia1_position2.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_position2 }}</div><br>
+		<div >{{ form.testimonia1_expl3.label }}{% if form.testimonia1_expl3.errors %}{% for error in form.testimonia1_expl3.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_expl3(id='editor32') }}</div><br>
+		<div >{{ form.testimonia1_name3.label }}{% if form.testimonia1_name3.errors %}{% for error in form.testimonia1_name3.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_name3 }}</div><br>
+		<div >{{ form.testimonia1_position3.label }}{% if form.testimonia1_position3.errors %}{% for error in form.testimonia1_position3.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_position3 }}</div><br>
+		<div >{{ form.testimonia1_expl4.label }}{% if form.testimonia1_expl4.errors %}{% for error in form.testimonia1_expl4.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_expl4(id='editor33') }}</div><br>
+		<div >{{ form.testimonia1_name4.label }}{% if form.testimonia1_name4.errors %}{% for error in form.testimonia1_name4.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_name4 }}</div><br>
+		<div >{{ form.testimonia1_position4.label }}{% if form.testimonia1_position4.errors %}{% for error in form.testimonia1_position4.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_position4 }}</div><br>
+		<div >{{ form.testimonia1_expl5.label }}{% if form.testimonia1_expl5.errors %}{% for error in form.testimonia1_expl5.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_expl5(id='editor34') }}</div><br>
+		<div >{{ form.testimonia1_name5.label }}{% if form.testimonia1_name5.errors %}{% for error in form.testimonia1_name5.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_name5 }}</div><br>
+		<div >{{ form.testimonia1_position5.label }}{% if form.testimonia1_position5.errors %}{% for error in form.testimonia1_position5.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.testimonia1_position5 }}</div><br>
+		<div >{{ form.blog_motto.label }}{% if form.blog_motto.errors %}{% for error in form.blog_motto.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.blog_motto }}</div><br>
+		<div >{{ form.blog_title.label }}{% if form.blog_title.errors %}{% for error in form.blog_title.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.blog_title }}</div><br>
+		<div >{{ form.blog_expl.label }}{% if form.blog_expl.errors %}{% for error in form.blog_expl.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.blog_expl(id='editor35') }}</div><br>
+		<div >{{ form.about_motto.label }}{% if form.about_motto.errors %}{% for error in form.about_motto.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.about_motto }}</div><br>
+		<div >{{ form.about_title.label }}{% if form.about_title.errors %}{% for error in form.about_title.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.about_title }}</div><br>
+		<div >{{ form.about_expl.label }}{% if form.about_expl.errors %}{% for error in form.about_expl.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.about_expl(id='editor36') }}</div><br>
+		<div >{{ form.about_main_title.label }}{% if form.about_main_title.errors %}{% for error in form.about_main_title.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.about_main_title }}</div><br>
+		<div >{{ form.about_main.label }}{% if form.about_main.errors %}{% for error in form.about_main.errors %}<p class="error-message"> {{error}} </p>{% endfor %}{% endif %}{{ form.about_main }}</div><br>
+
+
+      {{ form.update(class='btn-primary')}}
+	</form>
+</div>
+</main>
+
+
+{% endblock %}
