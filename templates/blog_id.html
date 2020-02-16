@@ -7,7 +7,7 @@
 
 <link rel="stylesheet" href="static/css/style_blog.css">
 
-  <section class="banner_area" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(static/images/{{blog.id|string+blog.main_topic.split()[0]}}.jpg) no-repeat scroll center;">
+  <section class="banner_area" style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(static/photo/{{blog.id|string+blog.main_topic.split()[0]}}.jpg) no-repeat scroll center;">
 
 
 
@@ -44,7 +44,7 @@
                     <div class="single-post row">
                         <div class="col-lg-12">
                             <div class="feature-img">
-                                <img class="img-fluid" src="static/img/image_3.jpg" alt="">
+                                <img class="img-fluid" src="static/photo/{{blog.id|string+blog.blog_topic.split()[0]}}.jpg" alt="">
                             </div>
                         </div>
                         <div class="col-lg-3  col-md-3">
@@ -78,27 +78,20 @@
                             <div class="quotes">
                               {{ blog.highlight | safe }}
                             </div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <img class="img-fluid" src="static/img/resto-3.jpg" alt="">
-                                </div>
-                                <div class="col-6">
-                                    <img class="img-fluid" src="static/img/room-1.jpg" alt="">
-                                </div>
-                                <div class="col-lg-12 mt-25">
-                                 {{ blog.body2 | safe }}
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                   
 
 
                 </div>
-                <div class="col-lg-4">
-                    <div class="blog_right_sidebar">
 
-                        <aside class="single_sidebar_widget author_widget">
+
+
+                <div class="col-lg-4" style="hight: 500px !important">
+                    <div class="blog_right_sidebar" >
+
+                        <aside class="single_sidebar_widget author_widget" >
                             <img class="author_img rounded-circle" src="static/img/Mehrnaz.jpg" alt="">
                             <h4> {{ blog.author_name | safe }} </h4>
                             <p>Senior Blog Writer</p>
@@ -113,42 +106,18 @@
                         </aside>
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Popular Posts</h3>
+                            {% for b in blog_all %}
                             <div class="media post_item">
-                                <img src="static/images/image_11.jpg" alt="post">
+                                <img src="static/photo/{{b.id|string+b.blog_topic.split()[0]}}.jpg" alt="" style="width: 60px; height: 40px">
                                 <div class="media-body">
                                     <a href="blog-details.html">
-                                        <h3>Travel to Iran</h3>
+                                       <a href={{ 'blog' +b.id|string}} target="_blank" > <h3> {{b.blog_topic}} </h3> </a>
                                     </a>
                                     
                                 </div>
                             </div>
-                             <div class="media post_item">
-                                <img src="static/images/image_11.jpg" alt="post">
-                                <div class="media-body">
-                                    <a href="blog-details.html">
-                                        <h3>Travel to Iran</h3>
-                                    </a>
-                                    
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="static/images/image_11.jpg" alt="post">
-                                <div class="media-body">
-                                    <a href="blog-details.html">
-                                        <h3>Travel to Iran</h3>
-                                    </a>
-                                    
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="static/images/image_11.jpg" alt="post">
-                                <div class="media-body">
-                                    <a href="blog-details.html">
-                                        <h3>Travel to Iran</h3>
-                                    </a>
-                                    
-                                </div>
-                            </div>
+                            {% endfor %}
+
                             <div class="br"></div>
                         </aside>
                         <aside class="single_sidebar_widget ads_widget">
@@ -175,6 +144,19 @@
                         </aside>
                     </div>
                 </div>
+
+
+                            <div class="row">
+
+                                <div class="col-lg-12 mt-25">
+                                 {{ blog.body2 | safe }}
+                                </div>
+                            </div>
+
+
+
+
+                
             </div>
         </div>
     </section>

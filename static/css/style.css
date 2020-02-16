@@ -7877,7 +7877,7 @@ h1, h2, h3, h4, h5,
         right: 0;
         bottom: 0;
         content: '';
-        background: #ff4000;
+        background: #f3a372;
         z-index: -1; }
     @media (max-width: 1199.98px) {
       .hero div.vr {
@@ -7930,21 +7930,22 @@ h1, h2, h3, h4, h5,
       background-repeat: no-repeat;
       background-position: top center;
       top:60px;
-      height: 650px;
+      height: 600px;
       position: relative;
-      z-index: 0; }
+      z-index: 0;
+       }
       @media (max-width: 1199.98px) {
         .owl-carousel.home-slider .slider-item {
           background-position: center center !important; } }
       .owl-carousel.home-slider .slider-item .slider-text {
-        top: 60px;
-        height: 650px;
+        top: 70px;
+        height: 520px;
         z-index: 0; }
         @media (max-width: 991.98px) {
           .owl-carousel.home-slider .slider-item .slider-text {
             text-align: center; } }
         .owl-carousel.home-slider .slider-item .slider-text .one-third {
-          height: 600px;
+          height: 500px;
           width: 45%;
           position: relative;
           z-index: -1;

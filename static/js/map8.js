@@ -387,14 +387,14 @@ google.maps.event.addListener(marker, 'click', (function(marker, content, infowi
         infowindow.setContent(content);
         infowindow.open(map, marker);
       };
-    })(marker, "<p style='width:200px; length:200px' ><b>70 min</b> flight with Mahan air which is one of the best demostic airlines </p>", infowindow));
+    })(marker, "<p style='' ><b>70 min</b> flight with Mahan air which is one of the best demostic airlines </p>", infowindow));
 
 
     google.maps.event.addListener(map, 'click', (function(marker, content, infowindow) {
       return function() {
         infowindow.close();
       };
-    })(marker, "<p style='width:200px; length:200px' ><b>244 km</b> that we will travel with a luxury car or bus</p>", infowindow));
+    })(marker, "<p style='' ><b>244 km</b> that we will travel with a luxury car or bus</p>", infowindow));
 
 
   // google.maps.event.addListener(map, 'click', function() {
@@ -441,14 +441,14 @@ google.maps.event.addListener(marker, 'click', (function(marker, content, infowi
         infowindow.setContent(content);
         infowindow.open(map, marker);
       };
-    })(marker, "<p style='width:200px; length:200px' ><b>244 km</b> We will wrap up our journey here </p>", infowindow));
+    })(marker, "<p style='' ><b>244 km</b> We will wrap up our journey here </p>", infowindow));
 
 
     google.maps.event.addListener(map, 'click', (function(marker, content, infowindow) {
       return function() {
         infowindow.close();
       };
-    })(marker, "<p style='width:200px; length:200px' ><b>244 km</b> that we will travel with a luxury car or bus</p>", infowindow));
+    })(marker, "<p style='' ><b>244 km</b> that we will travel with a luxury car or bus</p>", infowindow));
 
 var icon = {
     url: "static/img/car1.png", // url
@@ -472,14 +472,14 @@ google.maps.event.addListener(marker, 'click', (function(marker, content, infowi
         infowindow.setContent(content);
         infowindow.open(map, marker);
       };
-    })(marker, "<p style='width:200px; length:200px' ><b>216 km</b> We will continue our journey with some surprises . . .</p>", infowindow));
+    })(marker, "<p style='' ><b>216 km</b> We will continue our journey with some surprises . . .</p>", infowindow));
 
 
     google.maps.event.addListener(map, 'click', (function(marker, content, infowindow) {
       return function() {
         infowindow.close();
       };
-    })(marker, "<p style='width:200px; length:200px' ><b>216 km</b> that we will travel with a luxury car or bus</p>", infowindow));
+    })(marker, "<p style='' ><b>216 km</b> that we will travel with a luxury car or bus</p>", infowindow));
 
 
 
@@ -496,14 +496,14 @@ google.maps.event.addListener(marker, 'click', (function(marker, content, infowi
         infowindow.setContent(content);
         infowindow.open(map, marker);
       };
-    })(marker, "<p style='width:200px; length:200px'; background: red ><b>483 km</b> that we will travel with a luxury car or bus. I cannot tell you exactly how long it would take because we will have a lot of fun!!</p>", infowindow));
+    })(marker, "<p style=''; background: red ><b>483 km</b> that we will travel with a luxury car or bus. I cannot tell you exactly how long it would take because we will have a lot of fun!!</p>", infowindow));
 
 
     google.maps.event.addListener(map, 'click', (function(marker, content, infowindow) {
       return function() {
         infowindow.close();
       };
-    })(marker, "<p style='width:200px; length:200px'; background: rgba(255, 255, 255, 1) ><b>483 km</b> that we will travel with a luxury car or bus</p>", infowindow));
+    })(marker, "<p style=''; background: rgba(255, 255, 255, 1) ><b>483 km</b> that we will travel with a luxury car or bus</p>", infowindow));
 
 
 function createMarker(latLng, text, motto, label, contentString) {
@@ -524,7 +524,7 @@ function createMarker(latLng, text, motto, label, contentString) {
     this.setLabel(label);
   });
 
-  var content = '<div class="iw-content" style="width:330px; length:330px">' + '<div class="iw-subTitle">'+ "<b>"+ text +"</b>" +' </div>' + '<p>'+ motto +' </p>' + '<p><img width="300px height="300px" src="static/img/'+label+'.jpg"></img></p>' + '</div>';
+  var content = '<div class="iw-content" style="">' + '<div class="iw-subTitle">'+ "<b>"+text +"</b>" +' </div>' + '<p>'+ motto +' </p>' + '' + '</div>';
       var infowindow = new google.maps.InfoWindow({
     content: contentString
   });
@@ -583,9 +583,9 @@ function createMarker(latLng, text, motto, label, contentString) {
 //   // 
 }
 
-marker = createMarker({lat: 35.6899062, lng:51.307584}, "Tehran", 'We will arrive at Tehran and will stay for one night, and in the meantime we will visit some amazing places','A', 'AAA')
+marker = createMarker({lat: 35.6899062, lng:51.307584}, "Tehran", 'We will arrive at Tehran and will stay for one night.','A', 'AAA')
 marker = createMarker({lat: 29.5460138, lng:52.5923618}, "Shiraz",  'We will stay on shiraz for a couple of days and will immense in civilization and love!','B', 'BBB')
-marker = createMarker({lat: 32.6622111, lng:51.5469382}, "Isfahan",  'Isfahan, half of the world, is out third destination and will stay at Abbassi Hotel and also have incredible experience','C', 'CCC')
+marker = createMarker({lat: 32.6622111, lng:51.5469382}, "Isfahan",  'Isfahan, half of the world, is out third destination and will stay at Abbassi Hotel.','C', 'CCC')
 marker = createMarker({lat: 33.9814066, lng:51.3427133}, "Kashan",  'Last but not least, Kashan','D', 'DDD')
 
 }

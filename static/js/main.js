@@ -16,7 +16,9 @@
     scrollProperty: 'scroll'
   });
 
-
+$('#bs-example-navbar-collapse-1').collapse({
+  toggle: false
+})
 	var fullHeight = function() {
 
 		$('.js-fullheight').css('height', $(window).height());
@@ -292,8 +294,16 @@
 
     fixedContentPos: false
   });
+$(document).mouseup( function(e)
+{
+    var container = $(".menumobile");
 
-
+    if (!container.is(e.target)
+        && container.has(e.target).length === 0) 
+    {
+        $("#bs-example-navbar-collapse-1").collapse('hide');
+    }
+}); 
 
 
 

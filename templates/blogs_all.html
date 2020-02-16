@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+	  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+
+<section class="hero-wrap" style="height:85vh;background-image:url(static/photo/37_Services_Banner.jpg); ;" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-start">
+          <div class="col-md-9 ftco-animate pb-4">
+            <h1 class="mb-3 bread" style="color: white">Blogs</h1>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+ <section class="ftco-section bg-light" id="blog-section">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <span class="subheading">{{home.blog_motto |safe}}</span>
+            <h2 class="mb-4" ><a href="#" style="text-decoration: none; color: #333">  {{home.blog_title |safe}} </a></h2>
+            <p>{{home.blog_expl |safe}}</p>
+          </div>
+        </div>
+        <div class="row d-flex">
+          {% for b in blog_all[-3:] %}
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+              <a href="" class="block-20" style="background-image: url({{ url_for('static', filename='photo/'+b.id|string+b.blog_topic.split()[0]+'.jpg')}})">
+              </a>
+              <div class="text float-right d-block">
+                <div class="d-flex align-items-center pt-2 mb-4 topp">
+                  <div class="one mr-2">
+                    <span class="day">12</span>
+                  </div>
+                  <div class="two">
+                    <span class="yr">2019</span>
+                    <span class="mos">april</span>
+                  </div>
+                </div>
+                <h3 class="heading"><a href="single.html">{{b.blog_topic}}</a></h3>
+                <p>{{b.topic_expl | safe}}</p>
+                <div class="d-flex align-items-center mt-4 meta">
+                  <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
+                  <p class="ml-auto mb-0">
+<!--                    <a href="#" class="mr-2">Admin</a>
+                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a> -->
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
+
+
+
+        </div>
+
+
+
+
+      </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+{% endblock %}	  
+

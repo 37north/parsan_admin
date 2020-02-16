@@ -277,6 +277,18 @@ def editHome():
 	form.testimonia1_expl5.data = home['testimonia1_expl5']
 	form.testimonia1_name5.data = home['testimonia1_name5']
 	form.testimonia1_position5.data = home['testimonia1_position5']
+	form.route_motto.data = home['route_motto']
+	form.route_title.data = home['route_title']
+	form.route_expl.data = home['route_expl']
+	form.route_city1.data = home['route_city1']
+	form.route_place1.data = home['route_place1']
+	form.route_expl1.data = home['route_expl1']
+	form.route_city2.data = home['route_city2']
+	form.route_place2.data = home['route_place2']
+	form.route_expl2.data = home['route_expl2']
+	form.route_city3.data = home['route_city3']
+	form.route_place3.data = home['route_place3']
+	form.route_expl3.data = home['route_expl3']
 	form.blog_motto.data = home['blog_motto']
 	form.blog_title.data = home['blog_title']
 	form.blog_expl.data = home['blog_expl']
@@ -352,6 +364,18 @@ def editHome():
 		testimonia1_expl5 = request.form["testimonia1_expl5"] 
 		testimonia1_name5 = request.form["testimonia1_name5"] 
 		testimonia1_position5 = request.form["testimonia1_position5"] 
+		route_motto = request.form["route_motto"] 
+		route_title = request.form["route_title"] 
+		route_expl = request.form["route_expl"] 
+		route_city1 = request.form["route_city1"] 
+		route_place1 = request.form["route_place1"] 
+		route_expl1 = request.form["route_expl1"] 
+		route_city2 = request.form["route_city2"] 
+		route_place2 = request.form["route_place2"] 
+		route_expl2 = request.form["route_expl2"] 
+		route_city3 = request.form["route_city3"] 
+		route_place3 = request.form["route_place3"] 
+		route_expl3 = request.form["route_expl3"] 
 		blog_motto = request.form["blog_motto"] 
 		blog_title = request.form["blog_title"] 
 		blog_expl = request.form["blog_expl"] 
@@ -425,6 +449,21 @@ def editHome():
 		form.testimonia1_expl5.data = testimonia1_expl5 
 		form.testimonia1_name5.data = testimonia1_name5 
 		form.testimonia1_position5.data = testimonia1_position5 
+		
+		
+		form.route_motto.data = route_title
+		form.route_title.data = route_title
+		form.route_expl.data = route_expl
+		form.route_city1.data = route_city1
+		form.route_place1.data = route_place1
+		form.route_expl1.data = route_expl1
+		form.route_city2.data = route_city2
+		form.route_place2.data = route_place2
+		form.route_expl2.data = route_expl2
+		form.route_city3.data = route_city3
+		form.route_place3.data = route_place3
+		form.route_expl3.data = route_expl3
+		
 		form.blog_motto.data = blog_motto 
 		form.blog_title.data = blog_title 
 		form.blog_expl.data = blog_expl 
@@ -500,6 +539,21 @@ def editHome():
 	'testimonia1_expl5 = %s,'
 	'testimonia1_name5 = %s,'
 	'testimonia1_position5 = %s,'
+	
+	'route_motto = %s,'
+	'route_title = %s,'
+	'route_expl = %s,'
+	'route_city1 = %s,'
+	'route_place1 = %s,'
+	'route_expl1 = %s,'
+	'route_city2 = %s,'
+	'route_place2 = %s,'
+	'route_expl2 = %s,'
+	'route_city3 = %s,'
+	'route_place3 = %s,'
+	'route_expl3 = %s,'
+	
+	
 	'blog_motto = %s,'
 	'blog_title = %s,'
 	'blog_expl = %s,'
@@ -572,6 +626,18 @@ def editHome():
 	testimonia1_expl5,
 	testimonia1_name5,
 	testimonia1_position5, 
+	route_motto,
+	route_title,
+	route_expl,
+	route_city1,
+	route_place1,
+	route_expl1,
+	route_city2,
+	route_place2,
+	route_expl2,
+	route_city3,
+	route_place3,
+	route_expl3,
 	blog_motto,
 	blog_title,
 	blog_expl,
@@ -735,7 +801,31 @@ def home():
 	with db.engine.connect() as con:
 		rs = con.execute('select * from home where id=3')
 		home=rs.fetchone()
-	return render_template("index.html", home = home)
+		
+	with db.engine.connect() as con:
+		rs = con.execute('select * from articles')
+		blog_all=rs.fetchall()
+		
+	return render_template('index.html', home = home, blog_all=blog_all)
+		
+
+
+
+
+@app.route("/blogs")
+def blogAll():
+	with db.engine.connect() as con:
+		rs = con.execute('select * from home where id=3')
+		home=rs.fetchone()
+
+	with db.engine.connect() as con:
+		rs = con.execute('select * from articles')
+		blog_all=rs.fetchall()
+		
+	return render_template('blogs_all.html', home=home,blog_all=blog_all)
+		
+
+
 
 @app.route("/contact")
 def contact():
@@ -765,11 +855,19 @@ def tours1():
 def grand_tour():
     return render_template("grand_tour.html")
     
+  
+
+
     
 @app.route("/tour8")
 def tour8():
     return render_template("tour8.html")
     
+ 
+@app.route("/classic_tour")
+def classic_tour():
+    return render_template("classic_tour.html")
+
     
 @app.route("/hotels")
 def hotels():
@@ -799,7 +897,10 @@ def blog(id):
 		rs = con.execute('select * from articles where id=%s' , [id])
 		blog=rs.fetchone()
 		print(blog)
-	return render_template("blog_id.html", blog=blog)
+	with db.engine.connect() as con:
+		rs = con.execute('select * from articles')
+		blog_all=rs.fetchall()
+	return render_template("blog_id.html", blog=blog, blog_all = blog_all)
 
 @app.route("/imap")
 def imap():

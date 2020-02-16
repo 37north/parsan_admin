@@ -88,10 +88,10 @@
 	        <div class="container p-0">
 	          <div class="row d-flex no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
 	          	<div class="one-third order-md-last">
-	          		<div class="img" style="background-image:url(static/photo/88_Slider1.jpg); ">
+	          		<div class="img" style="background-image:url(static/photo/88_Slider1.jpg); box-shadow: 0 0 20px 20px  #4daab2 inset;">
 	          			<div class="overlay"></div>
 	          		</div>
-	          		<div class="vr"><span class="pl-3 py-4" style="font-size:60px;background-image: url('{{ url_for('static', filename='photo/88_Slider1.jpg')}}">{{home.slide1_place |safe}}</span></div>
+	          		<div class="vr"><span class="pl-3 py-4" style="font-size:45px; background-image: url('{{ url_for('static', filename='photo/88_Slider1.jpg')}}">{{home.slide1_place |safe}}</span></div>
 	          	</div>
 		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
@@ -112,10 +112,10 @@
 	        <div class="container p-0">
 	          <div class="row d-flex no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
 	          	<div class="one-third order-md-last">
-                <div class="img" style="background-image:url(static/photo/89_Slider2.jpg); ">
+                <div class="img" style="background-image:url(static/photo/89_Slider2.jpg); box-shadow: 0 0 30px 30px  #4daab2 inset;">
                   <div class="overlay"></div>
                 </div>
-                <div class="vr"><span class="pl-3 py-4" style="font-size:60px;background-image: url('{{ url_for('static', filename='photo/89_Slider2.jpg')}}">{{home.slide2_place |safe}}</span></div>
+                <div class="vr"><span class="pl-3 py-4" style="font-size:45px;background-image: url('{{ url_for('static', filename='photo/89_Slider2.jpg')}}">{{home.slide2_place |safe}}</span></div>
               </div>
 		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
@@ -136,10 +136,10 @@
 	        <div class="container p-0">
 	          <div class="row d-flex no-gutters slider-text align-items-center justify-content-end" data-scrollax-parent="true">
 	          	<div class="one-third order-md-last">
-                <div class="img" style="background-image:url(static/photo/90_Slider3.jpg); ">
+                <div class="img" style="background-image:url(static/photo/90_Slider3.jpg); box-shadow: 0 0 30px 30px  #4daab2 inset;">
                   <div class="overlay"></div>
                 </div>
-                <div class="vr"><span class="pl-3 py-4" style="font-size:60px;background-image: url('{{ url_for('static', filename='photo/90_Slider3.jpg')}}">{{home.slide3_place |safe}}</span></div>
+                <div class="vr"><span class="pl-3 py-4" style="font-size:45px;background-image: url('{{ url_for('static', filename='photo/90_Slider3.jpg')}}">{{home.slide3_place |safe}}</span></div>
               </div>
 		          <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
 		          	<div class="text">
@@ -619,9 +619,9 @@ var foopicker = new FooPicker({
     	<div class="container">
     		<div class="row justify-content-center pb-5">
           <div class="col-md-12 heading-section text-center ftco-animate">
-          	<span class="subheading">Suggested Tours</span>
-            <h2 class="mb-4">The Most Common Routs</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+          	<span class="subheading">{{home.route_motto |safe}}</span>
+            <h2 class="mb-4">{{home.route_title |safe}}</h2>
+            <p>{{home.route_expl |safe}}</p>
           </div>
         </div>
     		
@@ -630,12 +630,12 @@ var foopicker = new FooPicker({
   <img src="{{ url_for('static', filename='photo/19_Route1.jpg')}}" alt="sample38"  />
   <div class="title">
     <div>
-      <h2 style="text-align: left">8 Nights</h2>
-      <h4>Classic Tour </h4>
+      <h2 style="text-align: left">{{home.route_city1 |safe}}</h2>
+      <h4>{{home.route_place1 |safe}}</h4>
     </div>
   </div>
   <figcaption>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore  </p>
+    <p>{{home.route_expl1 |safe}}  </p>
   </figcaption>
   <a class="visible-lg visible-md" href="#"></a>
   
@@ -644,12 +644,12 @@ var foopicker = new FooPicker({
   <img src="{{ url_for('static', filename='photo/20_Route2.jpg')}}" alt=""  />
   <div class="title">
     <div>
-      <h2 style="text-align: left">11 Nights</h2>
-      <h4>Grand Tour</h4>
+            <h2 style="text-align: left">{{home.route_city2 |safe}}</h2>
+      <h4>{{home.route_place2 |safe}}</h4>
     </div>
   </div>
   <figcaption>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore  </p>
+    <p>{{home.route_expl2 |safe}}  </p>
   </figcaption>
   <a class="visible-lg visible-md" href="#"></a>
   
@@ -659,12 +659,12 @@ var foopicker = new FooPicker({
   <img src="{{ url_for('static', filename='photo/21_Route3.jpg')}}" alt=""  />
   <div class="title">
     <div>
-      <h2 style="text-align: left">Many Nights</h2>
-      <h4>another tour </h4>
+            <h2 style="text-align: left">{{home.route_city3 |safe}}</h2>
+      <h4>{{home.route_place3 |safe}}</h4>
     </div>
   </div>
   <figcaption>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore  </p>
+    <p>{{home.route_expl3 |safe}}  </p>
   </figcaption>
   <a class="visible-lg visible-md" href="#"></a>
   
@@ -690,9 +690,10 @@ var foopicker = new FooPicker({
           </div>
         </div>
         <div class="row d-flex">
+          {% for b in blog_all[-2:] %}
           <div class="col-md-6 col-lg-4 d-flex ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="" class="block-20" style="background-image: url('{{ url_for('static', filename='photo/22_Blog1.jpg')}}')">
+              <a href="" class="block-20" style="background-image: url({{ url_for('static', filename='photo/'+b.id|string+b.blog_topic.split()[0]+'.jpg')}})">
               </a>
               <div class="text float-right d-block">
               	<div class="d-flex align-items-center pt-2 mb-4 topp">
@@ -704,66 +705,42 @@ var foopicker = new FooPicker({
               			<span class="mos">april</span>
               		</div>
               	</div>
-                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+                <h3 class="heading"><a href="single.html">{{b.blog_topic}}</a></h3>
+                <p>{{b.topic_expl | safe}}</p>
                 <div class="d-flex align-items-center mt-4 meta">
 	                <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
 	                <p class="ml-auto mb-0">
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
+<!-- 	                	<a href="#" class="mr-2">Admin</a>
+	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a> -->
 	                </p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="" class="block-20" style="background-image: url('{{ url_for('static', filename='photo/23_Blog2.jpg')}}')">
+
+          {% endfor %}
+ <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="blog-entry justify-content-end">
+              <a href="" class="block-20" style="background-image: url({{ url_for('static', filename='photo/13_Travel6.jpg')}})">
               </a>
               <div class="text float-right d-block">
-              	<div class="d-flex align-items-center pt-2 mb-4 topp">
-              		<div class="one mr-2">
-              			<span class="day">12</span>
-              		</div>
-              		<div class="two">
-              			<span class="yr">2019</span>
-              			<span class="mos">april</span>
-              		</div>
-              	</div>
-                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                <div class="d-flex align-items-center mt-4 meta">
-	                <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-	                <p class="ml-auto mb-0">
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p>
+                <div class="d-flex align-items-center pt-2 mb-4 topp">
+                  <div class="one mr-2">
+                    <span class="day">12</span>
+                  </div>
+                  <div class="two">
+                    <span class="yr">2019</span>
+                    <span class="mos">april</span>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
-          	<div class="blog-entry">
-                            <a href="" class="block-20" style="background-image: url('{{ url_for('static', filename='photo/24_Blog3.jpg')}}')">
-              </a>
-              <div class="text float-right d-block">
-              	<div class="d-flex align-items-center pt-2 mb-4 topp">
-              		<div class="one mr-2">
-              			<span class="day">12</span>
-              		</div>
-              		<div class="two">
-              			<span class="yr">2019</span>
-              			<span class="mos">april</span>
-              		</div>
-              	</div>
-                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
+                <h3 class="heading"><a href="single.html"></a>Plenty of exotic blogs</h3>
                 <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                 <div class="d-flex align-items-center mt-4 meta">
-	                <p class="mb-0"><a href="#" class="btn btn-primary">Read More <span class="ion-ios-arrow-round-forward"></span></a></p>
-	                <p class="ml-auto mb-0">
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p>
+                  <p class="mb-0"><a href="#" class="btn btn-primary">More Blog <span class="ion-ios-arrow-round-forward"></span></a></p>
+                  <p class="ml-auto mb-0">
+<!--                    <a href="#" class="mr-2">Admin</a>
+                    <a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a> -->
+                  </p>
                 </div>
               </div>
             </div>

@@ -113,6 +113,18 @@ class Home(db.Model):
 	testimonia1_expl5 = db.Column(db.Text())
 	testimonia1_name5 = db.Column(db.String())
 	testimonia1_position5 = db.Column(db.String())
+	route_motto = db.Column(db.String())
+	route_title = db.Column(db.String())
+	route_expl = db.Column(db.Text())
+	route_city1 = db.Column(db.String())
+	route_place1 = db.Column(db.String())
+	route_expl1 = db.Column(db.Text())
+	route_city2 = db.Column(db.String())
+	route_place2 = db.Column(db.String())
+	route_expl2 = db.Column(db.Text())	
+	route_city3 = db.Column(db.String())
+	route_place3 = db.Column(db.String())
+	route_expl3 = db.Column(db.Text())	
 	blog_motto = db.Column(db.String())
 	blog_title = db.Column(db.String())
 	blog_expl = db.Column(db.Text())
@@ -187,7 +199,19 @@ class Home(db.Model):
 	testimonia1_position4, 
 	testimonia1_expl5,
 	testimonia1_name5,
-	testimonia1_position5, 
+	testimonia1_position5,
+	route_motto,
+	route_title,
+	route_expl,
+	route_city1,
+	route_place1,
+	route_expl1,
+	route_city2,
+	route_place2,
+	route_expl2,
+	route_city3,
+	route_place3,
+	route_expl3,
 	blog_motto,
 	blog_title,
 	blog_expl,
@@ -259,7 +283,19 @@ class Home(db.Model):
 	testimonia1_position4, 
 	testimonia1_expl5,
 	testimonia1_name5,
-	testimonia1_position5, 
+	testimonia1_position5,
+	route_motto,
+	route_title,
+	route_expl,
+	route_city1,
+	route_place1,
+	route_expl1,
+	route_city2,
+	route_place2,
+	route_expl2,
+	route_city3,
+	route_place3,
+	route_expl3,
 	blog_motto,
 	blog_title,
 	blog_expl,
